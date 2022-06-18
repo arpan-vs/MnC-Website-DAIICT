@@ -1,7 +1,7 @@
 import React from "react";
 import daiict from "../image/daiict.png";
 import "../App.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -18,16 +18,16 @@ const NavBar = () => {
                             <li className="nav-item dropdown-submenu">
                                 <a href="#">Why MnC at DAIICT?</a>
                                 <ul className="dropdown-menu">
-                                    <li className="dropdown-content">MnC Info</li>
-                                    <li className="dropdown-content">Course Curriculum</li>
+                                    <li className="dropdown-content"><a href="#">MnC Info</a></li>
+                                    <li className="dropdown-content"><a href="#">Course Curriculum</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item"><a href="#">AMC</a></li>
                             <li className="nav-item dropdown-submenu">
                                 <a href="#">Students</a>
                                 <ul className="dropdown-menu">
-                                    <li className="dropdown-content">Current Student</li>
-                                    <li className="dropdown-content">Alumni</li>
+                                    <li className="dropdown-content"><a href="#">Current Student</a></li>
+                                    <li className="dropdown-content"><a href="#">Alumni</a></li>
                                 </ul>
                             </li>
                             <li className="nav-item"><a href="#">Admin</a></li>
