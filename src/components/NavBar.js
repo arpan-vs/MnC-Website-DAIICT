@@ -1,7 +1,7 @@
 import React from "react";
 import daiict from "../image/daiict.png";
 import "../App.css";
-// import { Link } from "react-router-dom";
+// import { divnk } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -14,24 +14,24 @@ const NavBar = () => {
                         </a>
                     </div>
                     <div className="collapse">
-                        <ul className="navbar-nav">
-                            <li className="nav-item dropdown-submenu">
+                        <div className="navbar-nav">
+                            <div className="nav-item dropdown-submenu">
                                 <a href="#">Why MnC at DAIICT?</a>
-                                <ul className="dropdown-menu">
-                                    <li className="dropdown-content"><a href="#">MnC Info</a></li>
-                                    <li className="dropdown-content"><a href="#">Course Curriculum</a></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item"><a href="#">AMC</a></li>
-                            <li className="nav-item dropdown-submenu">
+                                <div className="dropdown-menu">
+                                    <div className="dropdown-content"><a href="#">MnC Info</a></div>
+                                    <div className="dropdown-content"><a href="#">Course Curricdivum</a></div>
+                                </div>
+                            </div>
+                            <div className="nav-item"><a href="#">AMC</a></div>
+                            <div className="nav-item dropdown-submenu">
                                 <a href="#">Students</a>
-                                <ul className="dropdown-menu">
-                                    <li className="dropdown-content"><a href="#">Current Student</a></li>
-                                    <li className="dropdown-content"><a href="#">Alumni</a></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item"><a href="#">Admin</a></li>
-                        </ul>
+                                <div className="dropdown-menu">
+                                    <div className="dropdown-content"><a href="#">Current Student</a></div>
+                                    <div className="dropdown-content"><a href="#">Alumni</a></div>
+                                </div>
+                            </div>
+                            <div className="nav-item"><a href="#">Admin</a></div>
+                        </div>
                     </div>
                 </div>
             </nav>
