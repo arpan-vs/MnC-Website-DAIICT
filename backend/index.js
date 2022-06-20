@@ -5,7 +5,7 @@ const bodyparser = require('body-parser');
 
 const MNCWEB = express();
 
-dotenv.config({path:'config.env'});
+dotenv.config({path:'.env'});
 const PORT = process.env.PORT||8000;
 
 MNCWEB.use(morgan('tiny'));
