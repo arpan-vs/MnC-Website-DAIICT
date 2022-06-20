@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0px;
   padding: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
@@ -8,11 +8,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Navbar */
 .navbar {
   background-color: #609d1ad9;
   position: fixed;
   border-radius: 35px;
   margin: 0% 1%;
+  margin-top: 1%;
   width: 98%;
   height: 100px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -34,7 +36,7 @@ body {
   position: relative;
 }
 
-.navbar-nav{
+.navbar-nav {
   height: 100%;
   display: inline-flex;
   flex-direction: row-reverse;
@@ -42,54 +44,70 @@ body {
   margin: 0px 20px 0px 0px;
 }
 
-.nav-item{
-  top: 100px;
-}
-
-.nav-item > a{
+.nav-item>a {
   padding: 0px 10px;
   font-size: 25px;
   color: white;
-  text-decoration:none;
+  text-decoration: none;
 }
-.nav-item > a:hover{
+
+.nav-item>a:hover {
   padding: 0px 10px;
-  text-shadow: 0px 0px 5px rgb(245, 245, 118) ;
+  text-shadow: 0px 0px 5px rgb(245, 245, 118);
   color: white;
 }
 
-.collapse .dropdown-menu{
+.collapse .dropdown-menu {
   position: absolute;
   white-space: nowrap;
   z-index: 1;
   padding: 10px;
-  background-color: #4878118b;
+  background-color: #487811cb;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(25px);
-  left: auto; 
+  left: auto;
   visibility: hidden;
-  margin-top: -5px;
+  /* margin-top: -5px; */
   margin-left: 5px;
 }
 
-.dropdown-content:first-child{
+.dropdown-content:first-child {
   padding-bottom: 10px;
 }
-.dropdown-content > a{
+
+.dropdown-content>a {
   align-items: stretch;
   color: white;
   font-size: medium;
   text-decoration: none;
 }
-.nav-item:hover a:hover ~ .dropdown-menu{
+
+.nav-item:hover a:hover~.dropdown-menu {
   visibility: visible;
 }
 
-.dropdown-menu:hover{
+.dropdown-menu:hover {
   visibility: visible;
 }
 
-.dropdown-menu a:hover{
-  text-shadow:  0px 0px 5px rgb(245, 245, 118) ;
+.dropdown-menu a:hover {
+  text-shadow: 0px 0px 5px rgb(245, 245, 118);
+}
+
+.heading{
+  text-align: center;
+  margin: 30px 0px;
+}
+.MnC-title{
+  font-size:xx-large;
+  font-weight: bolder;
+  color: rgb(10, 70, 10);
+  transition: all 0.5s;
+}
+
+.MnC-detail{
+  margin: 10px 200px;
+  text-align: justify;
+  font-size: larger;
 }
