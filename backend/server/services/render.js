@@ -1,0 +1,5 @@
+
+
+exports.getnews = (req,res) => {
+    
+};
