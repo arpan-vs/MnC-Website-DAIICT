@@ -1,0 +1,37 @@
+
+.news-container{
+    height: 200px;
+    background: rgba(0, 95, 13, 0.666) url(https://www.daiict.ac.in/themes/daiict/images/ln-bg.png) no-repeat;
+    margin: 10px 150px;
+    border-radius: 30px;
+    padding: 15px 35px;
+}
+
+.news-title{
+    font-size: xx-large;
+    color: white;
+    padding-bottom: 10px;
+    /* margin-left: 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.slider-icons{
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+    align-items: center;
+}
+
+.mySwiper{
+    margin: 0px 10px;
+}
+.news-card{
+    background-color: rgba(250, 235, 215, 0.373);
+    /* margin: 50xp 0px; */
+    padding: 15px;
+    border-radius: 15px;
+    /* height: auto; */
+}
+

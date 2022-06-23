@@ -4,7 +4,12 @@
   "description": "mncwebsite",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1"
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+>>>>>>> 6b3b42f866be67e85045f948b7681bdc837455e1
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +20,9 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongoose": "^6.3.8",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
