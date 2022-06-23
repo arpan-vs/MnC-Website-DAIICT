@@ -14,26 +14,16 @@
 /* Navbar */
 .navbar {
   background-color: #609d1ad9;
-  position: fixed;
+  position:absolute;
   border-radius: 35px;
-  margin: 1%;
-  width: 98%;
+  margin: 10px;
+  width: 1500px;
   height: 100px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(25px);
   border-radius: 30px;
 }
 
-@media screen and(max-width:1519px) {
-  .fix-width{
-    width: 1536px;
-  }
-  .navbar{
-    margin: 10px;
-    width: 1509px;
-  }
-  
-}
 
 .nav-container {
   display: flex;
