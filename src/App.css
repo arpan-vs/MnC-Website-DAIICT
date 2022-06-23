@@ -8,18 +8,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.fix-width{
+  width: 1519px;
+}
 /* Navbar */
 .navbar {
   background-color: #609d1ad9;
   position: fixed;
   border-radius: 35px;
-  margin: 0% 1%;
-  margin-top: 1%;
+  margin: 1%;
   width: 98%;
   height: 100px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(25px);
   border-radius: 30px;
+}
+
+@media screen and(max-width:1519px) {
+  .fix-width{
+    width: 1536px;
+  }
+  .navbar{
+    margin: 10px;
+    width: 1509px;
+  }
+  
 }
 
 .nav-container {
@@ -95,7 +108,7 @@
   text-shadow: 0px 0px 5px rgb(245, 245, 118);
 }
 
-.heading{
+.heading,.details{
   text-align: center;
   margin: 30px 0px;
 }
@@ -103,7 +116,7 @@
   font-size:xx-large;
   font-weight: bolder;
   color: rgb(10, 70, 10);
-  transition: all 0.5s;
+  /* transition: all 0.5s; */
 }
 
 .MnC-detail{
