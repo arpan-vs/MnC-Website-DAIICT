@@ -1,11 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
-import News from "./News";
+import EventsHome from "./EventsHome";
+import NewsHome from "./NewsHome";
 
 const Home = (props) => {
     return (
         <>
-            <News />
+            <NewsHome />
+            <EventsHome />
             <div className="heading">
                 <div className="MnC-title">What MnC is?</div>
             </div>
@@ -23,6 +24,5 @@ const Home = (props) => {
     );
 };
 
-Home.propTypes = {};
 
 export default Home;

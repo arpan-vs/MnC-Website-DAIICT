@@ -2,23 +2,18 @@ import React, { useCallback, useRef } from 'react';
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import './News.css';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper";
 
-// Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 
-
-// import required modules
-import { Autoplay, Navigation } from "swiper";
-
-const News = () => {
+const NewsHome = () => {
 
     var newsAll = [
         {
             id: 1,
-            title: "1 Mathematics & Computing Engineering is an amalgamation of mathematics with computer science",
+            title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
             dates: new Date(2022, 11, 2),
         },
         {
@@ -58,8 +53,6 @@ const News = () => {
         },
     ];
 
-    // const navigationPrevRef = React.useRef(null)
-    // const navigationNextRef = React.useRef(null)
     const sliderRef = useRef(null);
 
     const handlePrev = useCallback(() => {
@@ -79,6 +72,10 @@ const News = () => {
                         News
                     </div>
                     <div className='slider-icons'>
+                        <a href='#' className='view-all-news'>
+                            View All
+                            <MdChevronRight size={30} className="right-slider-icon" onClick={handleNext} />
+                        </a>
                         <MdChevronLeft size={40} className="left-slider-icon" onClick={handlePrev} />
                         <MdChevronRight size={40} className="right-slider-icon" onClick={handleNext} />
                     </div>
@@ -90,7 +87,7 @@ const News = () => {
                     loop={true}
                     loopFillGroupWithBlank={false}
                     autoplay={{
-                        delay: 3000,
+                        delay: 5000,
                         disableOnInteraction: true,
                     }}
                     ref={sliderRef}
@@ -102,10 +99,13 @@ const News = () => {
 
                                 <div className='news-card' key={news.id}>
                                     <div className="news-slider-title">
+                                    <a href='#'>
                                         {news.title}
+                                    </a>
+
                                     </div>
                                     <div className="news-date">
-                                        {new Date(news.dates).toDateString()}
+                                        {new Date(news.dates).toLocaleDateString()}
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -117,4 +117,4 @@ const News = () => {
     )
 }
 
-export default News
+export default NewsHome
