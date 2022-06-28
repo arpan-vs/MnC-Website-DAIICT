@@ -1,4 +1,5 @@
 import React from "react";
+import CompanyLogos from "./CompanyLogos";
 import EventsHome from "./EventsHome";
 import NewsHome from "./NewsHome";
 
@@ -20,6 +21,7 @@ const Home = (props) => {
                     Indian Institute of Technology defines the course as a unique programme and the first of its kind in the country. The curriculum for this program is designed to meet the need of sophisticated mathematics in modern scientific investigations and technological innovations. The programme has three components: mathematics, computing and financial engineering which are perfectly blended so that the strong mathematical and analytical components that are in-built in the curriculum form the basis on which the technological aspects of computing and finance are developed. Consequently, the programme, which is run by a team of committed faculty as instructors, produces a group of students with multiple skills in mathematics, computer science and financial engineering. The course emphasizes on training the students in various aspects of Theoretical Computer Science, Computational Techniques, Mathematical Modeling, Simulation, Probabilistic and Statistical Tools.
                 </div>
             </div>
+            <CompanyLogos />
         </>
     );
 };

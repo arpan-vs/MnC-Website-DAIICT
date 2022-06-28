@@ -85,7 +85,7 @@ const EventsHome = () => {
       <div className='events-container'>
         <div className='events-title'>
           <div>
-            events
+            Events
           </div>
           <div className='slider-icons'>
             <a href='#' className='view-all-events'>

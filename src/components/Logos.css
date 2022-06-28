@@ -1,0 +1,19 @@
+.logo-container{
+    background: rgb(10, 89, 20) url(https://www.daiict.ac.in/themes/daiict/images/ln-bg.png) no-repeat;
+    margin: 10px 150px;
+    border-radius: 15px;
+    padding: 15px 35px;
+}
+
+.logo-card, .logo-img{
+    justify-self: center;
+    text-align: center;
+}
+
+.logo-img {
+    align-self: center;
+}
+.logo-img img{
+    width: 50px;
+    border-radius: 4px;
+}
