@@ -2,13 +2,18 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyparser = require('body-parser');
+const connectDB = require('./server/database/connection');
+const cookieParser = require("cookie-parser");
 
 const MNCWEB = express();
 
 dotenv.config({path:'.env'});
 const PORT = process.env.PORT||8000;
 
+connectDB();
+
 MNCWEB.use(morgan('tiny'));
+MNCWEB.use(cookieParser());
 
 MNCWEB.use(bodyparser.urlencoded({extended:true}));
 
