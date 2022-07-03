@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const MNCWEB = express();
 
-dotenv.config({path:'.env'});
+dotenv.config({path:'dot.env'});
 const PORT = process.env.PORT||8000;
 
 connectDB();
