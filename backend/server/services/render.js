@@ -51,22 +51,22 @@ exports.getnews = async (req, res) => {
         try {
             var data = News.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     } else {
         try {
             var data = await News.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -78,13 +78,13 @@ exports.getEvent = async (req, res) => {
         try {
             var data = await Event.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     }
@@ -92,10 +92,10 @@ exports.getEvent = async (req, res) => {
 
         try {
             var data = await Event.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -107,13 +107,13 @@ exports.getStudent = async (req, res) => {
         try {
             var data = await student.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     }
@@ -122,23 +122,23 @@ exports.getStudent = async (req, res) => {
         try {
             var data = await student.find({ catagory: catagory });
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
     }
     else {
 
         try {
             var data = await student.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -150,23 +150,37 @@ exports.getcourse = async (req, res) => {
         try {
             var data = await course.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
-    } else {
+    } else if (req.query.sem) {
+        const seme = req.query.sem;
+        try {
+            var data = await course.find({ sem: seme });
+            if (!data) {
+                res.status(404).json({ message: "Not found News with id " + id })
+            } else {
+                res.json(data);
+            }
+        }
+        catch (err) {
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
+        }
+    } else
+     {
 
         try {
             var data = await course.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -178,23 +192,23 @@ exports.getfaculty = async (req, res) => {
         try {
             var data = await faculty.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     } else {
 
         try {
             var data = await faculty.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import daiict from "../image/daiict.png";
 import "../App.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -9,34 +9,37 @@ const NavBar = () => {
             <nav className="navbar">
                 <div className="nav-container">
                     <div>
-                        <a href="/" className="logo">
+                        <Link to="/" className="logo">
                             <img src={daiict} alt="" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="collapse">
                         <div className="navbar-nav">
+                            <div className="nav-item">
+                                <Link to="/">Home</Link>
+                            </div>
                             <div className="nav-item dropdown-submenu">
                                 <a href="#">Why MnC at DAIICT?</a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
-                                        <a href="#">MnC Info</a>
+                                        <Link to="#">MnC Info</Link>
                                     </div>
                                     <div className="dropdown-content">
-                                        <a href="#">Course Curricdivum</a>
+                                        <Link to="/course">Course Curricdivum</Link>
                                     </div>
                                 </div>
                             </div>
                             <div className="nav-item">
-                                <a href="#">AMC</a>
+                                <Link to="#">AMC</Link>
                             </div>
                             <div className="nav-item dropdown-submenu">
                                 <a href="#">Students</a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
-                                        <a href="#">Current Student</a>
+                                        <Link to="#">Current Student</Link>
                                     </div>
                                     <div className="dropdown-content">
-                                        <a href="#">Alumni</a>
+                                        <Link to="#">Alumni</Link>
                                     </div>
                                 </div>
                             </div>

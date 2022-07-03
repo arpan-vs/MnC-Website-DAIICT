@@ -6,6 +6,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body{
+  background-color: bisque;
+}
 .fix-width{
   width: 1519px;
 }
@@ -51,18 +54,22 @@
   font-size: 25px;
   color: white;
   text-decoration: none;
+  transition: all .4s ease;
+  -webkit-transition: all .2s ease;
 }
 
 .nav-item>a:hover {
   padding: 0px 10px;
   text-shadow: 0px 0px 5px rgb(245, 245, 118);
   color: white;
+  transition: all .4s ease;
+  -webkit-transition: all .2s ease;
 }
 
 .collapse .dropdown-menu {
   position: absolute;
   white-space: nowrap;
-  z-index: 1;
+  z-index: 99999;
   padding: 10px;
   background-color: #487811;
   border-radius: 10px;
@@ -95,6 +102,8 @@
 
 .dropdown-menu a:hover {
   text-shadow: 0px 0px 5px rgb(245, 245, 118);
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
 }
 
 .heading,.details{
