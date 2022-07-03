@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import CourseContext from '../context/courses/CourseContext'
 import './Course.css';
 
-const Courses = (props) => {
+const Courses = () => {
   const context = useContext(CourseContext);
   const { courses, getCourses } = context;
 
