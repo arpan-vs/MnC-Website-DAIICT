@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Courses from './components/Courses';
 import CourseState from './context/courses/CourseState';
+import NewsEventState from './context/news_events/NewsEventState';
+import MncInfo from './components/MncInfo';
 
 
 function App() {
@@ -17,13 +19,18 @@ function App() {
         <Router>
           <NavBar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={
+              <NewsEventState>
+                <Home />
+              </NewsEventState>
+            } />
 
             <Route path="/course" element={
               <CourseState>
                 <Courses />
               </CourseState>
             } />
+            <Route path="/info" element={<MncInfo />}/>
           </Routes>
         </Router>
       </div>

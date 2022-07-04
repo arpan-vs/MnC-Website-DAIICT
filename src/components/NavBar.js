@@ -22,7 +22,7 @@ const NavBar = () => {
                                 <a href="#">Why MnC at DAIICT?</a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
-                                        <Link to="#">MnC Info</Link>
+                                        <Link to="/info">MnC Info</Link>
                                     </div>
                                     <div className="dropdown-content">
                                         <Link to="/course">Course Curricdivum</Link>

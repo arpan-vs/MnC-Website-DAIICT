@@ -8,15 +8,10 @@ var schema1 = new mongoose.Schema({
 
     date: {
         type: Date,
-        default: Date.now,
+        default: Date.now(),
     },
 
     description: {
-        type: String,
-        required: true,
-    },
-
-    sort_dis: {
         type: String,
         required: true,
     },
@@ -139,11 +134,6 @@ var schema6 = new mongoose.Schema({
     },
 
     description: {
-        type: String,
-        required: true,
-    },
-
-    sort_dis: {
         type: String,
         required: true,
     },

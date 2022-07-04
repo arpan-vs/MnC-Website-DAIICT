@@ -12,7 +12,6 @@ exports.createnews = (req, res) => {
     const user = new News({
         title: req.body.title,
         description: req.body.description,
-        sort_dis: req.body.sort_dis,
     })
 
     //save user in the database
@@ -40,7 +39,6 @@ exports.createEvent = (req, res) => {
     const user = new Event({
         title: req.body.title,
         description: req.body.description,
-        sort_dis: req.body.sort_dis,
     })
 
     //save user in the database

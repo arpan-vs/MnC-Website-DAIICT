@@ -25,6 +25,10 @@
     align-items: center;
 }
 
+.slider-icons:hover{
+    cursor: pointer;
+}
+
 .view-all-news{
     font-size: large;
     align-items: center;

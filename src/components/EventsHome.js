@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useContext, useEffect, useRef } from 'react';
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
@@ -7,16 +7,23 @@ import './Events.css';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import NewsEventContext from '../context/news_events/NewsEventContext';
 
 
 const EventsHome = () => {
+
+  const context = useContext(NewsEventContext);
+  const {events, getEvents} = context;
+
+  useEffect(()=>{
+    getEvents();
+  },[]);
   var eventsAll = [
     {
       id: 1,
       title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
       img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
       startdate: new Date(2022, 11, 2),
-      enddate: new Date(2022, 11, 2),
     },
     {
       id: 2,
@@ -109,21 +116,21 @@ const EventsHome = () => {
           ref={sliderRef}
           modules={[Autoplay, Navigation]}
           className="mySwiper">
-          {eventsAll.map((events) => {
+          {events.map((event) => {
             return (
               <SwiperSlide>
 
                 <a href='#'>
-                  <div className='events-card' key={events.id}>
+                  <div className='events-card' key={event._id}>
                     <div className="events-img">
-                      <img src={events.img} />
+                      <img src={"https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"} />
                     </div>
                     <div className="events-slider-title">
-                      {events.title}
+                      {event.title}
 
                     </div>
                     <div className="events-date">
-                      {new Date(events.startdate).toLocaleDateString()} - {new Date(events.enddate).toLocaleDateString()}
+                      {new Date(event.date).toLocaleDateString()}
                     </div>
                   </div>
                 </a>

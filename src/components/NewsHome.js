@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useContext, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import './News.css';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,51 +7,58 @@ import { Autoplay, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import NewsEventContext from '../context/news_events/NewsEventContext';
 
 const NewsHome = () => {
 
-    var newsAll = [
-        {
-            id: 1,
-            title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
-            dates: new Date(2022, 11, 2),
-        },
-        {
-            id: 2,
-            title: "2 Mathematic & Computing Engineering is an amalgamation of mathematics with computer science",
-            dates: new Date(2022, 1, 25),
-        },
-        {
-            id: 3,
-            title: "3 Mathematics & Computing Engineering is a amalgamation of mathematics with computer science",
-            dates: new Date(2020, 11, 2),
-        },
-        {
-            id: 4,
-            title: "4 Mathematics & Computing Engineeng is an amalgamation of mathematics with computer science",
-            dates: new Date(2021, 1, 25),
-        },
-        {
-            id: 5,
-            title: "5 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-            dates: new Date(2032, 11, 25),
-        },
-        {
-            id: 6,
-            title: "6 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-            dates: new Date(2012, 11, 25),
-        },
-        {
-            id: 7,
-            title: "7 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-            dates: new Date(2002, 11, 25),
-        },
-        {
-            id: 8,
-            title: "8 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-            dates: new Date(2000, 11, 25),
-        },
-    ];
+    const context = useContext(NewsEventContext);
+    const {news, getNews} = context;
+
+    useEffect(() => {
+        getNews();
+      }, []);
+    // var newsAll = [
+    //     {
+    //         id: 1,
+    //         title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
+    //         dates: new Date(2022, 11, 2),
+    //     },
+    //     {
+    //         id: 2,
+    //         title: "2 Mathematic & Computing Engineering is an amalgamation of mathematics with computer science",
+    //         dates: new Date(2022, 1, 25),
+    //     },
+    //     {
+    //         id: 3,
+    //         title: "3 Mathematics & Computing Engineering is a amalgamation of mathematics with computer science",
+    //         dates: new Date(2020, 11, 2),
+    //     },
+    //     {
+    //         id: 4,
+    //         title: "4 Mathematics & Computing Engineeng is an amalgamation of mathematics with computer science",
+    //         dates: new Date(2021, 1, 25),
+    //     },
+    //     {
+    //         id: 5,
+    //         title: "5 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+    //         dates: new Date(2032, 11, 25),
+    //     },
+    //     {
+    //         id: 6,
+    //         title: "6 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+    //         dates: new Date(2012, 11, 25),
+    //     },
+    //     {
+    //         id: 7,
+    //         title: "7 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+    //         dates: new Date(2002, 11, 25),
+    //     },
+    //     {
+    //         id: 8,
+    //         title: "8 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+    //         dates: new Date(2000, 11, 25),
+    //     },
+    // ];
 
     const sliderRef = useRef(null);
 
@@ -87,13 +94,31 @@ const NewsHome = () => {
                     loop={true}
                     loopFillGroupWithBlank={false}
                     autoplay={{
-                        delay: 5000,
+                        delay: 4000,
                         disableOnInteraction: true,
                     }}
                     ref={sliderRef}
                     modules={[Autoplay, Navigation]}
                     className="mySwiper">
-                    {newsAll.map((news) => {
+                    {news.map((news1) => {
+                        return (
+                            <SwiperSlide>
+
+                                <div className='news-card' key={news1._id}>
+                                    <div className="news-slider-title">
+                                    <a href='#'>
+                                        {news1.title}
+                                    </a>
+
+                                    </div>
+                                    <div className="news-date">
+                                        {new Date(news1.date).toLocaleDateString()}
+                                    </div>
+                                </div>
+                            </SwiperSlide>
+                        );
+                    })}
+                    {/* {newsAll.map((news) => {
                         return (
                             <SwiperSlide>
 
@@ -110,7 +135,7 @@ const NewsHome = () => {
                                 </div>
                             </SwiperSlide>
                         );
-                    })}
+                    })} */}
                 </Swiper>
             </div>
         </>
