@@ -19,7 +19,7 @@ const NavBar = () => {
                                 <Link to="/">Home</Link>
                             </div>
                             <div className="nav-item dropdown-submenu">
-                                <a href="#">Why MnC at DAIICT?</a>
+                                <a href="">Why MnC at DAIICT?</a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
                                         <Link to="/info">MnC Info</Link>
@@ -30,13 +30,13 @@ const NavBar = () => {
                                 </div>
                             </div>
                             <div className="nav-item">
-                                <Link to="#">AMC</Link>
+                                <Link to="/">AMC</Link>
                             </div>
                             <div className="nav-item dropdown-submenu">
                                 <a href="#">Students</a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
-                                        <Link to="#">Current Student</Link>
+                                        <Link to="/students">Current Student</Link>
                                     </div>
                                     <div className="dropdown-content">
                                         <Link to="#">Alumni</Link>

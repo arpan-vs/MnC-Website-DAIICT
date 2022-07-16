@@ -55,3 +55,18 @@
 .news-slider-title{
     padding-bottom: 7px;
 }
+
+.newsPage{
+    width: 80%;
+    margin: 10px auto;
+}
+
+.newsCard{
+    margin: 5px auto;
+    background-color: beige;
+}
+
+.newsLink{
+    text-decoration: none;
+    color: black;
+}

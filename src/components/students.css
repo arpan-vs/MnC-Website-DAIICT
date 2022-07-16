@@ -1,0 +1,62 @@
+.batchTitle {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+    /* width: auto; */
+    color: rgb(10, 70, 10);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    /* display: inline-block; */
+}
+
+.batchTitle:hover {
+    font-size: 45px;
+    font-weight: bolder;
+    color: rgb(10, 70, 10);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+.ContainerForBatch {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    margin: auto 190px;
+}
+
+.blogItem {
+    background-color: rgb(10, 59, 15);
+    padding: 30px 0px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+}
+
+.blogItem:hover {
+    background-color: burlywood;
+}
+
+.blogImage {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.studentTitle {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(0, 255, 34, 0.741),
+        rgb(67, 119, 11)
+    );
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}

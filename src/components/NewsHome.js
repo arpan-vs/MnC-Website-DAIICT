@@ -1,12 +1,12 @@
 import React, { useCallback, useRef, useContext, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
-import './News.css';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper";
-
+import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import './News.css';
 import NewsEventContext from '../context/news_events/NewsEventContext';
 
 const NewsHome = () => {
@@ -79,10 +79,10 @@ const NewsHome = () => {
                         News
                     </div>
                     <div className='slider-icons'>
-                        <a href='#' className='view-all-news'>
+                        <Link to='/news' className='view-all-news'>
                             View All
                             <MdChevronRight size={30} className="right-slider-icon" onClick={handleNext} />
-                        </a>
+                        </Link>
                         <MdChevronLeft size={40} className="left-slider-icon" onClick={handlePrev} />
                         <MdChevronRight size={40} className="right-slider-icon" onClick={handleNext} />
                     </div>
@@ -100,7 +100,7 @@ const NewsHome = () => {
                     ref={sliderRef}
                     modules={[Autoplay, Navigation]}
                     className="mySwiper">
-                    {news.map((news1) => {
+                    {[...news].reverse().map((news1) => {
                         return (
                             <SwiperSlide>
 

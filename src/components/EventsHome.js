@@ -18,63 +18,63 @@ const EventsHome = () => {
   useEffect(()=>{
     getEvents();
   },[]);
-  var eventsAll = [
-    {
-      id: 1,
-      title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2022, 11, 2),
-    },
-    {
-      id: 2,
-      title: "2 Mathematic & Computing Engineering is an amalgamation of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2022, 1, 25),
-      enddate: new Date(2022, 11, 2),
-    },
-    {
-      id: 3,
-      title: "3 Mathematics & Computing Engineering is a amalgamation of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2020, 11, 2),
-      enddate: new Date(2022, 11, 2),
-    },
-    {
-      id: 4,
-      title: "4 Mathematics & Computing Engineeng is an amalgamation of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2021, 1, 25),
-      enddate: new Date(2022, 11, 2),
-    },
-    {
-      id: 5,
-      title: "5 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2032, 11, 25),
-      enddate: new Date(2022, 11, 2),
-    },
-    {
-      id: 6,
-      title: "6 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2012, 11, 25),
-      enddate: new Date(2022, 11, 2),
-    },
-    {
-      id: 7,
-      title: "7 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2002, 11, 25),
-      enddate: new Date(2022, 11, 2),
-    },
-    {
-      id: 8,
-      title: "8 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-      img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
-      startdate: new Date(2000, 11, 25),
-      enddate: new Date(2022, 11, 2),
-    },
-  ];
+  // var eventsAll = [
+  //   {
+  //     id: 1,
+  //     title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "2 Mathematic & Computing Engineering is an amalgamation of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2022, 1, 25),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "3 Mathematics & Computing Engineering is a amalgamation of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2020, 11, 2),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "4 Mathematics & Computing Engineeng is an amalgamation of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2021, 1, 25),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 5,
+  //     title: "5 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2032, 11, 25),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 6,
+  //     title: "6 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2012, 11, 25),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 7,
+  //     title: "7 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2002, 11, 25),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "8 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
+  //     img: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Gull_portrait_ca_usa.jpg",
+  //     startdate: new Date(2000, 11, 25),
+  //     enddate: new Date(2022, 11, 2),
+  //   },
+  // ];
 
   const sliderRef = useRef(null);
 
@@ -116,7 +116,7 @@ const EventsHome = () => {
           ref={sliderRef}
           modules={[Autoplay, Navigation]}
           className="mySwiper">
-          {events.map((event) => {
+          {[...events].reverse().map((event) => {
             return (
               <SwiperSlide>
 

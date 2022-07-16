@@ -10,6 +10,8 @@ import Courses from './components/Courses';
 import CourseState from './context/courses/CourseState';
 import NewsEventState from './context/news_events/NewsEventState';
 import MncInfo from './components/MncInfo';
+import News from './components/News';
+import Students from './components/Students';
 
 
 function App() {
@@ -24,13 +26,19 @@ function App() {
                 <Home />
               </NewsEventState>
             } />
+            <Route path='/news' element={
+            <NewsEventState>
+              <News />
+            </NewsEventState>
+            } />
 
             <Route path="/course" element={
               <CourseState>
                 <Courses />
               </CourseState>
             } />
-            <Route path="/info" element={<MncInfo />}/>
+            <Route path="/info" element={<MncInfo />} />
+            <Route path="/students" element={<Students />}/>
           </Routes>
         </Router>
       </div>
