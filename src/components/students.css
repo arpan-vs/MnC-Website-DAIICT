@@ -2,11 +2,10 @@
     text-align: center;
     font-size: 40px;
     font-weight: bolder;
-    /* width: auto; */
     color: rgb(10, 70, 10);
     transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
-    /* display: inline-block; */
+    margin: 7px;
 }
 
 .batchTitle:hover {
@@ -22,6 +21,7 @@
     grid-template-columns: auto auto auto;
     grid-gap: 50px;
     margin: auto 190px;
+    margin-bottom: 70px;
 }
 
 .blogItem {
@@ -33,10 +33,12 @@
     text-decoration: none;
     transition: all .4s ease;
     -webkit-transition: all .4s ease;
+    width:323.2px;
 }
 
 .blogItem:hover {
     background-color: burlywood;
+    transform: scale(1.02);
 }
 
 .blogImage {
@@ -59,4 +61,13 @@
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
+}
+
+.ruler{
+    background-color: rgb(20, 57, 20);
+    align-self: center;
+    width: 1200px;
+    height: 5px;
+    margin: auto;
+    margin: 15px auto;
 }

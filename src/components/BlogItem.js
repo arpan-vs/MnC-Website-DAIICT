@@ -12,7 +12,7 @@ const BlogItem = props => {
       }
     return (
         <>
-            <a className='blogItem' href={props.link} target="blank" >
+            <a className='blogItem' href={props.link} target="_blank" >
                 <div className=''>
                     <img src={props.image} className="blogImage" />
                     <div className="studentTitle">{toTitleCase(props.name)}</div>

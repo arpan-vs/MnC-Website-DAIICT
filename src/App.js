@@ -12,6 +12,9 @@ import NewsEventState from './context/news_events/NewsEventState';
 import MncInfo from './components/MncInfo';
 import News from './components/News';
 import Students from './components/Students';
+import Footer from './components/Footer';
+import Alumni from './components/Alumni';
+import Amc from './components/Amc';
 
 
 function App() {
@@ -39,8 +42,11 @@ function App() {
             } />
             <Route path="/info" element={<MncInfo />} />
             <Route path="/students" element={<Students />}/>
+            <Route path="/alumni" element={<Alumni />}/>
+            <Route path="/amc" element={<Amc />}/>
           </Routes>
         </Router>
+        <Footer />
       </div>
     </>
   );

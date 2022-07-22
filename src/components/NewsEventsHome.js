@@ -9,7 +9,7 @@ import "swiper/css/autoplay";
 import './News.css';
 import NewsEventContext from '../context/news_events/NewsEventContext';
 
-const NewsHome = () => {
+const NewsEventsHome = () => {
 
     const context = useContext(NewsEventContext);
     const {news, getNews} = context;
@@ -76,7 +76,7 @@ const NewsHome = () => {
             <div className='news-container'>
                 <div className='news-title'>
                     <div>
-                        News
+                        News &amp; Events
                     </div>
                     <div className='slider-icons'>
                         <Link to='/news' className='view-all-news'>
@@ -142,4 +142,4 @@ const NewsHome = () => {
     )
 }
 
-export default NewsHome
+export default NewsEventsHome

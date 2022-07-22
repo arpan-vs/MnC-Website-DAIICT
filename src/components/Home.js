@@ -1,13 +1,11 @@
 import React from "react";
 import CompanyLogos from "./CompanyLogos";
-import EventsHome from "./EventsHome";
-import NewsHome from "./NewsHome";
+import NewsEventsHome from "./NewsEventsHome";
 
 const Home = (props) => {
     return (
         <>
-            <NewsHome />
-            <EventsHome />
+            <NewsEventsHome />
             <div className="heading">
                 <div className="MnC-title">What MnC is?</div>
             </div>

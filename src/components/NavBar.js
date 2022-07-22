@@ -19,7 +19,9 @@ const NavBar = () => {
                                 <Link to="/">Home</Link>
                             </div>
                             <div className="nav-item dropdown-submenu">
-                                <a href="">Why MnC at DAIICT?</a>
+                                <a>
+                                    Why MnC at DAIICT?
+                                </a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
                                         <Link to="/info">MnC Info</Link>
@@ -30,16 +32,18 @@ const NavBar = () => {
                                 </div>
                             </div>
                             <div className="nav-item">
-                                <Link to="/">AMC</Link>
+                                <Link to="/amc">AMC</Link>
                             </div>
                             <div className="nav-item dropdown-submenu">
-                                <a href="#">Students</a>
+                                <a>
+                                    Students
+                                </a>
                                 <div className="dropdown-menu">
                                     <div className="dropdown-content">
                                         <Link to="/students">Current Student</Link>
                                     </div>
                                     <div className="dropdown-content">
-                                        <Link to="#">Alumni</Link>
+                                        <Link to="/alumni">Alumni</Link>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +54,7 @@ const NavBar = () => {
                     </div>
                 </div>
             </nav>
-            <div style={{padding:60}}></div>
+            <div style={{ padding: 60 }}></div>
         </>
     );
 };
