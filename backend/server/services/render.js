@@ -159,7 +159,22 @@ exports.getcourse = async (req, res) => {
             res.status(500).send({ message: "Erro retrieving News with id " + id })
         }
 
-    } else {
+    }
+    else if (req.query.sem) {
+        const seme = req.query.sem;
+        try {
+            var data = await course.find({ sem: seme });
+            if (!data) {
+                res.status(404).send({ message: "Not found News with id " + id })
+            } else {
+                res.send(data);
+            }
+        }
+        catch (err) {
+            res.status(500).send({ message: "Erro retrieving News with id " + id })
+        }
+    } 
+    else {
 
         try {
             var data = await course.find();
