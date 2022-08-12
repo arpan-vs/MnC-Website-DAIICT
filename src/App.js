@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  useParams
 } from "react-router-dom";
 import Courses from './components/Courses';
 import CourseState from './context/courses/CourseState';
@@ -15,9 +16,11 @@ import Students from './components/Students';
 import Footer from './components/Footer';
 import Alumni from './components/Alumni';
 import Amc from './components/Amc';
+import GetCourse from './components/GetCourse';
 
 
 function App() {
+  let { id } = useParams();
   return (
     <>
       <div className='fix-width'>
@@ -30,9 +33,9 @@ function App() {
               </NewsEventState>
             } />
             <Route path='/news' element={
-            <NewsEventState>
-              <News />
-            </NewsEventState>
+              <NewsEventState>
+                <News />
+              </NewsEventState>
             } />
 
             <Route path="/course" element={
@@ -40,10 +43,15 @@ function App() {
                 <Courses />
               </CourseState>
             } />
+            <Route path="/course/:id" element={
+              <CourseState>
+                <GetCourse />
+              </CourseState>
+            } />
             <Route path="/info" element={<MncInfo />} />
-            <Route path="/students" element={<Students />}/>
-            <Route path="/alumni" element={<Alumni />}/>
-            <Route path="/amc" element={<Amc />}/>
+            <Route path="/students" element={<Students />} />
+            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/amc" element={<Amc />} />
           </Routes>
         </Router>
         <Footer />

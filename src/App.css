@@ -6,11 +6,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 body{
   background-color: bisque;
+  overflow-y: scroll;
 }
 .fix-width{
-  width: 1519px;
+  width: 1526px;
 }
 
 /* Navbar */
@@ -19,7 +40,7 @@ body{
   position:absolute;
   border-radius: 35px;
   margin: 10px;
-  width: 1500px;
+  width: 1507px;
   height: 100px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(25px);
@@ -70,7 +91,7 @@ body{
 .collapse .dropdown-menu {
   position: absolute;
   white-space: nowrap;
-  z-index: 99999;
+  z-index: 99999999;
   padding: 10px;
   background-color: #487811;
   border-radius: 10px;
@@ -140,4 +161,5 @@ body{
 .footerClass{
   background-color: darkolivegreen;
   height: 250px;
+  width: auto;
 }

@@ -24,8 +24,31 @@ const CourseState = (props) => {
     setCourses(json);
   };
 
+  // GET all Course
+  const getCourseByID = async (id) => {
+    // TODO: API call
+    const respose = await fetch(
+      `${host}/getcourse?id=${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // querys: {
+        //   "id":id,
+        // }
+      }
+    );
+    const json = await respose.json();
+    // const NewCourse = json.filter((course)=>{
+    //   return course._id == _id;
+    // })
+    console.log(json);
+    setCourses(json);
+  };
+
   return (
-    <CourseContext.Provider value={{courses, getCourses}}>
+    <CourseContext.Provider value={{courses, getCourses, getCourseByID}}>
       {props.children}
     </CourseContext.Provider>
   )
