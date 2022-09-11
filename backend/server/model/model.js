@@ -36,7 +36,7 @@ const admin_data = mongoose.model('admin_data', schema2);
 var schema3 = new mongoose.Schema({
     catagory: {
         type: String,
-        required: true,
+        required: false,
     },
 
     name: {
@@ -50,7 +50,7 @@ var schema3 = new mongoose.Schema({
     },
 
     batch: {
-        type: String,
+        type: Number,
         required: true,
     },
 

@@ -13,11 +13,17 @@ const News = () => {
 
     return (
         <>
-            <div className='newsPage'>
+            <div className='container'>
+
+                <div className="ruler"></div>
+                <div className="batchTitle fs-3">News &amp; Events </div>
+                <div className="ruler"></div>
+            </div>
+            <div className='newsPage container'>
                 {[...news].reverse().map((news1) => {
                     return (
-                        <div className='news-card newsCard' key={news1._id}>
-                            <a className='newsLink' href='#'>
+                        <a className='newsLink' key={news1._id} href='#'>
+                            <div className='news-card newsCard' >
                                 <div className="news-slider-title">
                                     {news1.title}
 
@@ -25,8 +31,8 @@ const News = () => {
                                 <div className="news-date">
                                     {new Date(news1.date).toLocaleDateString()}
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     );
                 })}
             </div>

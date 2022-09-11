@@ -1,10 +1,11 @@
 import React, { useCallback, useRef, useContext, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import './News.css';
 import NewsEventContext from '../context/news_events/NewsEventContext';
@@ -12,11 +13,11 @@ import NewsEventContext from '../context/news_events/NewsEventContext';
 const NewsEventsHome = () => {
 
     const context = useContext(NewsEventContext);
-    const {news, getNews} = context;
+    const { news, getNews } = context;
 
     useEffect(() => {
         getNews();
-      }, []);
+    }, []);
     // var newsAll = [
     //     {
     //         id: 1,
@@ -72,8 +73,8 @@ const NewsEventsHome = () => {
         sliderRef.current.swiper.slideNext();
     }, []);
     return (
-        <>
-            <div className='news-container'>
+        <>  <div className="container">
+            <div className='news-container container-sm'>
                 <div className='news-title'>
                     <div>
                         News &amp; Events
@@ -88,14 +89,27 @@ const NewsEventsHome = () => {
                     </div>
                 </div>
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={1}
                     spaceBetween={40}
-                    slidesPerGroup={1}
+                    // slidesPerGroup={1}
+                    // pagination={{
+                    //     clickable: true,
+                    // }}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        },
+                    }}
                     loop={true}
                     loopFillGroupWithBlank={false}
                     autoplay={{
                         delay: 4000,
-                        disableOnInteraction: true,
+                        // disableOnInteraction: true,
                     }}
                     ref={sliderRef}
                     modules={[Autoplay, Navigation]}
@@ -105,39 +119,22 @@ const NewsEventsHome = () => {
                             <SwiperSlide>
 
                                 <div className='news-card' key={news1._id}>
-                                    <div className="news-slider-title">
-                                    <a href='#'>
-                                        {news1.title}
-                                    </a>
+                                    <a href='#' className='news-link'>
+                                        <div className="news-slider-title">
+                                            {news1.title}
+                                            <div className="news-date">
+                                                Date : {new Date(news1.date).toLocaleDateString()}
+                                            </div>
 
-                                    </div>
-                                    <div className="news-date">
-                                        {new Date(news1.date).toLocaleDateString()}
-                                    </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </SwiperSlide>
                         );
                     })}
-                    {/* {newsAll.map((news) => {
-                        return (
-                            <SwiperSlide>
-
-                                <div className='news-card' key={news.id}>
-                                    <div className="news-slider-title">
-                                    <a href='#'>
-                                        {news.title}
-                                    </a>
-
-                                    </div>
-                                    <div className="news-date">
-                                        {new Date(news.dates).toLocaleDateString()}
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        );
-                    })} */}
                 </Swiper>
             </div>
+        </div>
         </>
     )
 }

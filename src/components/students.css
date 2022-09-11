@@ -1,50 +1,49 @@
 .batchTitle {
     text-align: center;
-    font-size: 40px;
     font-weight: bolder;
     color: rgb(10, 70, 10);
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
     margin: 7px;
 }
 
-.batchTitle:hover {
-    font-size: 45px;
-    font-weight: bolder;
-    color: rgb(10, 70, 10);
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
+
+.CenterItem {
+    align-items: center;
+    margin: auto;
 }
 
-.ContainerForBatch {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 50px;
-    margin: auto 190px;
-    margin-bottom: 70px;
+.ContainerForBatch{
+    background-color: green;
+    background-color: rgb(10, 59, 15);
+    border-radius: 10px;
+    /* text-align: center; */
+}
+.StudentPage{
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: rgb(9, 79, 9);
+    border-radius: 5px;
+    /* margin: 1px; */
 }
 
 .blogItem {
     background-color: rgb(10, 59, 15);
-    padding: 30px 0px;
-    margin: 5px;
     border-radius: 10px;
     text-align: center;
-    text-decoration: none;
     transition: all .4s ease;
     -webkit-transition: all .4s ease;
-    width:323.2px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    /* width: 424px; */
 }
-
 .blogItem:hover {
     background-color: burlywood;
     transform: scale(1.02);
 }
 
-.blogImage {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+.bloglink {
+    text-decoration: none;
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
 }
 
 .studentTitle {
@@ -66,8 +65,5 @@
 .ruler{
     background-color: rgb(20, 57, 20);
     align-self: center;
-    width: 1200px;
     height: 5px;
-    margin: auto;
-    margin: 15px auto;
 }

@@ -2,24 +2,21 @@ import React from 'react';
 import "./students.css";
 
 const BlogItem = props => {
-    const toTitleCase = (str) =>{
-        return str.replace(
-          /\w\S*/g,
-          function(txt) {
-            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-          }
-        );
-      }
-    return (
-        <>
-            <a className='blogItem' href={props.link} target="_blank" >
-                <div className=''>
-                    <img src={props.image} className="blogImage" />
-                    <div className="studentTitle">{toTitleCase(props.name)}</div>
-                </div>
-            </a>
-        </>
-    )
+
+  return (
+    <>
+      <div className='p-2 col'>
+        <a className='bloglink' href={props.link} target="_blank" >
+          <div className='card blogItem'>
+            <div className="card-body my-3">
+              <img src={props.image} className="card-img" />
+              <div className="card-title studentTitle text-capitalize">{props.name}</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </>
+  )
 }
 
 export default BlogItem

@@ -76,33 +76,51 @@ const CompanyLogos = () => {
     ];
     return (
         <>
-            <div className='logo-container'>
-                <Swiper
-                    slidesPerView={8}
-                    spaceBetween={40}
-                    slidesPerGroup={1}
-                    loop={true}
-                    loopFillGroupWithBlank={false}
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: true,
-                    }}
-                    modules={[Autoplay]}
-                    className="mySwiper">
-                    {LogosAll.map((logo) => {
-                        return (
-                            <SwiperSlide>
-                                <div className='logo-card' key={logo.id}>
-                                    <a href={logo.lnk}>
-                                        <div className="logo-img">
-                                            <img src={process.env.PUBLIC_URL + "logos/" + logo.image} />
-                                        </div>
-                                    </a>
-                                </div>
-                            </SwiperSlide>
-                        );
-                    })}
-                </Swiper>
+            <div className="container">
+                <div className='logo-container'>
+                    <div className='logo-title'>
+                        <div>
+                            Recruiters
+                        </div>
+                    </div>
+                    <Swiper
+                        slidesPerView={5}
+                        loop={true}
+
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 5,
+                            },
+
+                            768: {
+                                slidesPerView: 7,
+                            },
+                            1024: {
+                                slidesPerView: 10,
+                            },
+                        }}
+                        loopFillGroupWithBlank={false}
+                        autoplay={{
+                            delay: 1000,
+                            disableOnInteraction: true,
+                        }}
+                        modules={[Autoplay]}
+                        className="mySwiper">
+                        {LogosAll.map((logo) => {
+                            return (
+                                <SwiperSlide>
+                                    <div className='logo-card' key={logo.id}>
+                                        <a href={logo.lnk}>
+                                            <div className="logo-img">
+                                                <img src={process.env.PUBLIC_URL + "logos/" + logo.image} />
+                                            </div>
+                                        </a>
+                                    </div>
+                                </SwiperSlide>
+                            );
+                        })}
+                    </Swiper>
+                </div>
             </div>
         </>
     )

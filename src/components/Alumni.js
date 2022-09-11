@@ -1,15 +1,22 @@
-import React from 'react'
-import BlogItem from './BlogItem';
+import React, { useContext, useEffect } from 'react'
+import StudentContext from '../context/students/StudentContext';
 import "./students.css";
 
 const Alumni = props => {
+
+    const context = useContext(StudentContext);
+    const { students, getStudents } = context;
+
+    useEffect(() => {
+        getStudents();
+    }, []);
 
     const Students = [
         {
             id: 1,
             name: "Arpan1 Shingala",
             image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2025,
+            batch: 2011,
             link: "https://google.com/"
         },
         {
@@ -58,12 +65,13 @@ const Alumni = props => {
             id: 8,
             name: "Arpan shingala",
             image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2016,
+            batch: 2017,
             link: "https://google.com/"
         },
     ];
 
-    const batchsO = [...new Set(Students.map((item) => item.batch))]
+    
+    const batchsO = [...new Set(students.map((item) => item.batch))]
     const batchs = batchsO.filter((batch) => new Date().getFullYear() - batch > 4)
     batchs.sort();
 
@@ -72,18 +80,34 @@ const Alumni = props => {
             {batchs.map((batch) => {
                 return (
                     <>
-                        <div className="ruler"></div>
-                        <div className="batchTitle">{batch}</div>
-                        <div className="ruler"></div>
-                        <div className="ContainerForBatch">
-                            {Students.map((Student) => {
-                                if (Student.batch === batch)
-                                    return (
-                                        <>
-                                            <BlogItem image={Student.image} name={Student.name} link={Student.link} />
-                                        </>
-                                    );
-                            })}
+                        <div className='container'>
+
+                            <div className="ruler"></div>
+                            <div className="batchTitle fs-3">{batch}</div>
+                            <div className="ruler"></div>
+                        </div>
+
+                        <div className='container my-3'>
+                            <div className="ContainerForBatch p-2 text-white">
+
+                                {students.map((Student) => {
+                                    if (Student.batch === batch)
+                                        return (
+                                            <>
+                                                <div id={Student._id} className=' StudentPage m-1 px-2'>
+
+                                                    <a href={Student.link} target="_blank" className='StudentPage'>
+                                                        <div className='text-capitalize'>
+                                                            {Student.name}
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                {/* <BlogItem image={Student.image} name={Student.name} link={Student.link} /> */}
+                                            </>
+                                        );
+                                })}
+                            </div>
                         </div>
                     </>
                 );

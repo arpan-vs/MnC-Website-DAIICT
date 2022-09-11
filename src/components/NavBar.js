@@ -6,12 +6,52 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
     return (
         <>
-            <nav className="navbar">
+            <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
+                <div className="container-fluid">
+                    <a href="https://www.daiict.ac.in/" className="logo" target="_blank" >
+                        <img src={daiict} alt="" />
+                    </a>
+                    <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link fs-5 text-white" aria-current="page">Home</Link>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Why MnC at DAIICT?
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end">
+                                    <li><Link to="/info" className="dropdown-item text-white" href="#">MnC Info</Link></li>
+                                    <li><Link to="/course" className="dropdown-item text-white" href="#">Course Curriculum</Link></li>
+                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/amc" className="nav-link fs-5 text-white" href="#">AMC</Link>
+                            </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Students
+                                </a>
+                                <ul className="dropdown-menu dropdown-menu-end">
+                                    <li><Link to="/students" className="dropdown-item text-white" href="#">Current Student</Link></li>
+                                    <li><Link to="/alumni" className="dropdown-item text-white" href="#">Alumni</Link></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div style={{padding:50}}></div>
+            {/* <nav className="navbar">
                 <div className="nav-container">
                     <div>
-                        <Link to="/" className="logo">
+                        <a href="daiict.ac.in" className="logo">
                             <img src={daiict} alt="" />
-                        </Link>
+                        </a>
                     </div>
                     <div className="collapse">
                         <div className="navbar-nav">
@@ -27,7 +67,7 @@ const NavBar = () => {
                                         <Link to="/info">MnC Info</Link>
                                     </div>
                                     <div className="dropdown-content">
-                                        <Link to="/course">Course Curricdivum</Link>
+                                        <Link to="/course">Course Curriculum</Link>
                                     </div>
                                 </div>
                             </div>
@@ -47,14 +87,11 @@ const NavBar = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="nav-item">
-                                <a href="#">Admin</a>
-                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
-            <div style={{ padding: 60 }}></div>
+            <div style={{ padding: 60 }}></div> */}
         </>
     );
 };

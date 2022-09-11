@@ -49,7 +49,7 @@ const Amc = () => {
         },
         {
             id: 8,
-            name: "Arpan shingala",
+            name: "arpan shingala",
             image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
             batch: 2020,
             link: "https://google.com/"
@@ -57,17 +57,23 @@ const Amc = () => {
     ];
     return (
         <>
-            <div className="ruler"></div>
-            <div className="batchTitle">Professors</div>
-            <div className="ruler"></div>
-            <div className="ContainerForBatch">
-                {Professors.map((Professor) => {
-                    return (
-                        <>
-                            <BlogItem image={Professor.image} name={Professor.name} link={Professor.link} />
-                        </>
-                    );
-                })}
+            <div className='container'>
+
+                <div className="ruler"></div>
+                <div className="batchTitle fs-3">Academic Monitoring Committee </div>
+                <div className="ruler"></div>
+            </div>
+            <div className="container mt-3">
+                <div className='container row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 m-auto'>
+
+                    {Professors.map((Professor) => {
+                        return (
+                            <>
+                                <BlogItem image={Professor.image} name={Professor.name} link={Professor.link} />
+                            </>
+                        );
+                    })}
+                </div>
             </div>
         </>
     )

@@ -17,6 +17,7 @@ import Footer from './components/Footer';
 import Alumni from './components/Alumni';
 import Amc from './components/Amc';
 import GetCourse from './components/GetCourse';
+import StudentState from './context/students/StudentState';
 
 
 function App() {
@@ -49,8 +50,16 @@ function App() {
               </CourseState>
             } />
             <Route path="/info" element={<MncInfo />} />
-            <Route path="/students" element={<Students />} />
-            <Route path="/alumni" element={<Alumni />} />
+            <Route path="/students" element={
+              <StudentState>
+                <Students />
+              </StudentState>
+            } />
+            <Route path="/alumni" element={
+              <StudentState>
+                <Alumni />
+              </StudentState>
+            } />
             <Route path="/amc" element={<Amc />} />
           </Routes>
         </Router>

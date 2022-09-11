@@ -6,10 +6,12 @@ const Home = (props) => {
     return (
         <>
             <NewsEventsHome />
-            <div className="heading">
-                <div className="MnC-title">What MnC is?</div>
+            <div className="container">
+                <div className="heading">
+                    <div className="MnC-title">What MnC is?</div>
+                </div>
             </div>
-            <div className="details">
+            <div className="MnC-details container">
                 <div className="MnC-detail">
                     Mathematics & Computing Engineering is an amalgamation of mathematics with computer science and financial engineering. Covering the major areas in demand today, this course is of utmost value to the aspiring engineers. The course provides students with comprehensive theoretical knowledge and also practical training in computer science, numerical computing and mathematical finance. This programme has been introduced due to the need for sophisticated mathematics for modern scientific investigations and technological developments. The curriculum is designed to provide students with in depth theoretical background and practical training in computer science, numerical computing and mathematical finance.
                 </div>
