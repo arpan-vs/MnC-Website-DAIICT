@@ -8,7 +8,7 @@ var schema1 = new mongoose.Schema({
 
     date: {
         type: Date,
-        default: Date.now,
+        default: Date.now(),
     },
 
     description: {
@@ -16,7 +16,7 @@ var schema1 = new mongoose.Schema({
         required: true,
     },
 
-    sort_dis: {
+    image: {
         type: String,
         required: true,
     },
@@ -39,10 +39,6 @@ var schema2 = new mongoose.Schema({
 const admin_data = mongoose.model('admin_data', schema2);
 
 var schema3 = new mongoose.Schema({
-    catagory: {
-        type: String,
-        required: true,
-    },
 
     name: {
         type: String,
@@ -55,12 +51,12 @@ var schema3 = new mongoose.Schema({
     },
 
     batch: {
-        type: String,
+        type: Number,
         required: true,
     },
 
-    about: {
-        type: String,
+    link: {
+        type: String
     },
 });
 
@@ -72,33 +68,14 @@ var schema4 = new mongoose.Schema({
         required: true,
     },
 
-    degrees: {
-        type: String,
-        require: true,
+    link: {
+        type: String
     },
 
-    contact_details: {
-        type: String,
-        required: true,
+    image: {
+        type: String
     },
 
-    taken_courses: {
-        type: String,
-        required: true,
-    },
-
-    email_id: {
-        type: String,
-        required: true,
-    },
-
-    biography: {
-        type: String,
-    },
-
-    specialization: {
-        type: String,
-    }
 });
 
 const faculty = mongoose.model('faculty', schema4);
@@ -142,13 +119,21 @@ var schema6 = new mongoose.Schema({
         type: String,
         required: true,
     },
+});
 
-    sort_dis: {
+const Event = mongoose.model('Event', schema6);
+
+var schema7 = new mongoose.Schema({
+    image: {
+        type: String
+    },
+
+    description: {
         type: String,
         required: true,
     },
 });
 
-const Event = mongoose.model('Event', schema6);
+const Achievement = mongoose.model('Achievement', schema7);
 
-module.exports = { News, admin_data, student, faculty, course, Event };
+module.exports = { News, admin_data, student, faculty, course, Event, Achievement };

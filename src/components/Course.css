@@ -1,0 +1,107 @@
+/* Courses CSS */
+.sem-container {
+    margin: 20px auto;
+    background-color: rgba(87, 157, 134, 0.529);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    /* position: sticky; */
+}
+
+.Semtitle {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 7px;
+    background-color: rgb(37, 176, 179);
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+.Semtitle:hover {
+    background-color: rgb(22, 107, 79);
+}
+
+.courseTab {
+    font-size: medium;
+    background-color: rgb(39, 106, 17);
+    /* border-radius: 5px; */
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+}
+
+.accordion-flush .accordion-item .accordion-button {
+    background-color: rgb(39, 106, 17);
+    /* border-color: rgb(39, 106, 17); */
+    /* border: 5px ; */
+    color: whitesmoke;
+}
+.accordion-button.collapsed {
+    background: rgb(255, 255, 255);
+}
+
+.accordion-button:after {
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion-flush .accordion-item .accordion-button:focus {
+    z-index: 3;
+    border-color: none;
+    outline: none;
+    box-shadow: none !important;
+}
+
+.accordion-flush .accordion-item .accordion-button::after {
+    background-color: rgb(39, 106, 17);
+    color: rgba(245, 245, 245, 0);
+}
+
+.Discription {
+    text-align: justify;
+    color: white;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+
+/* Single Course CSS */
+.SCourseTab {
+    width: 90%;
+    margin: 10px auto;
+    margin-top: 40px;
+    padding: 15px 25px;
+    padding-bottom: 25px;
+    background-color: #116531d9;
+    border-radius: 35px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+}
+
+.SCourseTitle {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+.SCourseCredits {
+    text-align: center;
+    font-size: large;
+    font-weight: 500;
+}
+
+.ruler {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(23, 75, 23);
+    align-self: center;
+    border-radius: 5px;
+    /* height: 2px; */
+}

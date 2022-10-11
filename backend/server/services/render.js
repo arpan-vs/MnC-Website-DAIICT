@@ -1,4 +1,4 @@
-var { News, admin_data, student, faculty, course, Event } = require('../model/model');
+var { News, admin_data, student, faculty, course, Event, Achievement } = require('../model/model');
 const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
 
@@ -25,15 +25,15 @@ exports.login = async (req, res) => {
             }
             else {
                 const maxAge = 3 * 60 * 60;
-                const token = jwt.sign({ username:username },process.env.JWTSECRET,{expiresIn: maxAge});
+                const token = jwt.sign({ username: username }, process.env.JWTSECRET, { expiresIn: maxAge });
                 res.cookie("jwt", token, {
                     httpOnly: true,
                     maxAge: maxAge * 1000, // 3hrs in ms
-                  });
+                });
                 res.status(200).json({
-                        message: "Login successful",
-                        user_id:ad_data._id,
-                    })
+                    message: "Login successful",
+                    user_id: ad_data._id,
+                })
             }
         }
     } catch (error) {
@@ -49,24 +49,24 @@ exports.getnews = async (req, res) => {
         const id = req.query.id;
 
         try {
-            var data = News.findById(id);
+            var data = await News.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Error retrieving News with id " + id })
         }
 
     } else {
         try {
             var data = await News.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -78,13 +78,13 @@ exports.getEvent = async (req, res) => {
         try {
             var data = await Event.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     }
@@ -92,10 +92,10 @@ exports.getEvent = async (req, res) => {
 
         try {
             var data = await Event.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -107,13 +107,13 @@ exports.getStudent = async (req, res) => {
         try {
             var data = await student.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     }
@@ -122,23 +122,23 @@ exports.getStudent = async (req, res) => {
         try {
             var data = await student.find({ catagory: catagory });
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
     }
     else {
 
         try {
             var data = await student.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -150,13 +150,13 @@ exports.getcourse = async (req, res) => {
         try {
             var data = await course.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     }
@@ -173,15 +173,15 @@ exports.getcourse = async (req, res) => {
         catch (err) {
             res.status(500).send({ message: "Erro retrieving News with id " + id })
         }
-    } 
+    }
     else {
 
         try {
             var data = await course.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -193,23 +193,23 @@ exports.getfaculty = async (req, res) => {
         try {
             var data = await faculty.findById(id);
             if (!data) {
-                res.status(404).send({ message: "Not found News with id " + id })
+                res.status(404).json({ message: "Not found News with id " + id })
             } else {
-                res.send(data);
+                res.json(data);
             }
         }
         catch (err) {
-            res.status(500).send({ message: "Erro retrieving News with id " + id })
+            res.status(500).json({ message: "Erro retrieving News with id " + id })
         }
 
     } else {
 
         try {
             var data = await faculty.find();
-            res.send(data);
+            res.json(data);
         }
         catch (err) {
-            res.status(500).send({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
         }
     }
 };
@@ -217,3 +217,4 @@ exports.getfaculty = async (req, res) => {
 exports.logout = (req, res) => {
     res.cookie("jwt", "");
 }
+

@@ -1,29 +1,68 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+/* .fix-width{
+  background-color: #487811;
+} */
 
-.fix-width{
-  width: 1519px;
+.logo img {
+    width: 60px;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #609d1ad9;
-  position:absolute;
-  border-radius: 35px;
-  margin: 10px;
-  width: 1500px;
-  height: 100px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(25px);
-  border-radius: 30px;
+    background-color: #609d1ae6;
+    border-radius: 20px;
+    margin: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
 }
 
+.dropdown-menu {
+    background-color: #487811;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+}
 
+.navbar-toggler {
+    background-color: #487811;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+.navbar-toggler:hover {
+    background-color: #38600b;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-link:hover {
+    text-shadow: 0px 0px 5px rgb(245, 245, 118);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #487811;
+    text-shadow: 0px 0px 5px rgb(245, 245, 118);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+/*
 .nav-container {
   display: flex;
   flex-direction: row;
@@ -32,11 +71,6 @@
   height: 100%;
 }
 
-.logo img {
-  width: 80px;
-  left: 15px;
-  position: relative;
-}
 
 .navbar-nav {
   height: 100%;
@@ -51,28 +85,20 @@
   font-size: 25px;
   color: white;
   text-decoration: none;
+  transition: all .4s ease;
+  -webkit-transition: all .2s ease;
+  cursor: pointer;
 }
 
 .nav-item>a:hover {
   padding: 0px 10px;
   text-shadow: 0px 0px 5px rgb(245, 245, 118);
   color: white;
+  transition: all .4s ease;
+  -webkit-transition: all .2s ease;
 }
 
-.collapse .dropdown-menu {
-  position: absolute;
-  white-space: nowrap;
-  z-index: 1;
-  padding: 10px;
-  background-color: #487811;
-  border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(25px);
-  left: auto;
-  visibility: hidden;
-  /* margin-top: -5px; */
-  margin-left: 5px;
-}
+
 
 .dropdown-content:first-child {
   padding-bottom: 10px;
@@ -84,44 +110,46 @@
   font-size: medium;
   text-decoration: none;
 }
+ */
 
-.nav-item:hover a:hover~.dropdown-menu {
-  visibility: visible;
+.heading,
+.details {
+    text-align: center;
+    margin: 30px 0px;
 }
 
-.dropdown-menu:hover {
-  visibility: visible;
+.MnC-title {
+    font-size: 40px;
+    font-weight: bolder;
+    width: auto;
+    color: rgb(10, 70, 10);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    display: inline-block;
 }
 
-.dropdown-menu a:hover {
-  text-shadow: 0px 0px 5px rgb(245, 245, 118);
+.MnC-title:hover {
+    font-size: 45px;
+    font-weight: bolder;
+    color: rgb(10, 70, 10);
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
 }
 
-.heading,.details{
-  text-align: center;
-  margin: 30px 0px;
+.MnC-detail {
+    margin: auto;
+    text-align: justify;
+    font-size: larger;
 }
 
-.MnC-title{
-  font-size:40px;
-  font-weight: bolder;
-  width: auto;
-  color: rgb(10, 70, 10);
-  transition: all .4s ease;
-  -webkit-transition: all .4s ease;
-  display: inline-block;
-}
-
-.MnC-title:hover{
-  font-size:45px;
-  font-weight: bolder;
-  color: rgb(10, 70, 10);
-  transition: all .4s ease;
--webkit-transition: all .4s ease;
-}
-
-.MnC-detail{
-  margin: 10px 200px;
-  text-align: justify;
-  font-size: larger;
+.footerClass {
+    background-color: darkolivegreen;
+    /* background-color: #609d1ae6; */
+    border-radius: 9px;
+    /* margin: 10px; */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+    text-align: center;
+    /* font-size: large; */
+    height: auto;
 }
