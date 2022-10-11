@@ -29,27 +29,28 @@ const Courses = () => {
               <>
                 <div className="sem-container container">
                   <div className="Semtitle">Semester {semester}</div>
-
+                  {/* eslint-disable-next-line */}
                   {courses.map((course) => {
                     if (course.sem === semester) {
                       return (
-                        <div className="accordion-item courseTab my-1 rounded-3 " key={course._id}>
-                            <button className="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target={'#flush-' + course._id} aria-expanded="false" aria-controls={'flush-' + course._id}>
-                              <div>
+                        <div className="accordion-item courseTab my-1 rounded-3" key={course._id}>
+                          <button className="accordion-button collapsed rounded-3 py-2" type="button" data-bs-toggle="collapse" data-bs-target={'#flush-' + course._id} aria-expanded="false" aria-controls={'flush-' + course._id}>
+                            <div className="courseHead">
                               <div className="text-capitalize">
                                 {course.title}
                               </div>
                               <div>
                                 {course.credits}
                               </div>
-                              </div>
-                            </button>
-                          <div id={'flush-' + course._id} className="accordion-collapse collapse " aria-labelledby={'flush-h' + course._id} data-bs-parent="#accordionFlushExample">
+                            </div>
+                              <div className="mx-2"></div>
+                          </button>
+                          <div id={'flush-' + course._id} className="accordion-collapse collapse" aria-labelledby={'flush-h' + course._id} data-bs-parent="#accordionFlushExample">
                             {/* <hr style={{size:2}}/> */}
                             <div className="container">
                               <div className="ruler"></div>
                             </div>
-                            <p className="accordion-body Discription">
+                            <p className="accordion-body Discription m-auto py-2">
                               {course.description}
                             </p>
                           </div>

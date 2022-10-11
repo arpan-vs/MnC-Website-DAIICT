@@ -38,6 +38,8 @@
 .blogItem:hover {
     background-color: burlywood;
     transform: scale(1.02);
+    transition: all .4s ease;
+    -webkit-transition: all .4s ease;
 }
 
 .bloglink {

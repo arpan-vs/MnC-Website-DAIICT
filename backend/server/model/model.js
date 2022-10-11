@@ -15,6 +15,7 @@ var schema1 = new mongoose.Schema({
         type: String,
         required: true,
     },
+    
 });
 
 const News = mongoose.model('News', schema1);
