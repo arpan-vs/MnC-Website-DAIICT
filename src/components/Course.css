@@ -1,4 +1,9 @@
 /* Courses CSS */
+
+/* .newcontainer{
+    display: grid;
+    grid-template-columns: auto auto;
+} */
 .sem-container {
     margin: 20px auto;
     background-color: rgba(87, 157, 134, 0.529);
@@ -26,18 +31,33 @@
 .courseTab {
     font-size: medium;
     background-color: rgb(39, 106, 17);
-    /* border-radius: 5px; */
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
+    margin: auto;
+}
+
+.courseHead{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .accordion-flush .accordion-item .accordion-button {
     background-color: rgb(39, 106, 17);
-    /* border-color: rgb(39, 106, 17); */
-    /* border: 5px ; */
     color: whitesmoke;
 }
+
+.accordion-button{
+    padding: auto 5px;
+}
+
+.accordion-button:not(.collapsed),
+.accordion-button:not(.collapsed):focus {
+    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px;
+}
+
 .accordion-button.collapsed {
     background: rgb(255, 255, 255);
 }
@@ -47,7 +67,7 @@
 }
 
 .accordion-flush .accordion-item .accordion-button:focus {
-    z-index: 3;
+    /* z-index: 3; */
     border-color: none;
     outline: none;
     box-shadow: none !important;
@@ -61,15 +81,12 @@
 .Discription {
     text-align: justify;
     color: white;
-    /* display: flex; */
-    /* flex-wrap: wrap; */
     white-space: pre-wrap; /* Since CSS 2.1 */
     white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
     white-space: -pre-wrap; /* Opera 4-6 */
     white-space: -o-pre-wrap; /* Opera 7 */
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
-
 
 /* Single Course CSS */
 .SCourseTab {

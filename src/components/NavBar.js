@@ -20,7 +20,7 @@ const NavBar = () => {
                                 <Link to="/" className="nav-link fs-5 text-white" aria-current="page">Home</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Why MnC at DAIICT?
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-end">
@@ -32,7 +32,7 @@ const NavBar = () => {
                                 <Link to="/amc" className="nav-link fs-5 text-white" href="#">AMC</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="nav-link fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Students
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-end">

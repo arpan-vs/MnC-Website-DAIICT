@@ -18,7 +18,7 @@ var schema1 = new mongoose.Schema({
 
     image: {
         type: String,
-        required: true,
+        // required: true,
     },
 });
 
@@ -105,25 +105,6 @@ var schema5 = new mongoose.Schema({
 const course = mongoose.model('course', schema5);
 
 var schema6 = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true,
-    },
-
-    date: {
-        type: Date,
-        default: Date.now(),
-    },
-
-    description: {
-        type: String,
-        required: true,
-    },
-});
-
-const Event = mongoose.model('Event', schema6);
-
-var schema7 = new mongoose.Schema({
     image: {
         type: String
     },
@@ -134,6 +115,6 @@ var schema7 = new mongoose.Schema({
     },
 });
 
-const Achievement = mongoose.model('Achievement', schema7);
+const Achievement = mongoose.model('Achievement', schema6);
 
-module.exports = { News, admin_data, student, faculty, course, Event, Achievement };
+module.exports = { News, admin_data, student, faculty, course, Achievement };
