@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import StudentContext from '../context/students/StudentContext';
-import "./students.css";
+import "../css/Students.css";
 
 const Alumni = props => {
 

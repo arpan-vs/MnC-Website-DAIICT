@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import NewsEventContext from '../context/news_events/NewsEventContext';
-import './News.css';
+import '../css/News.css';
 
 const News = () => {
 
@@ -9,6 +9,7 @@ const News = () => {
 
     useEffect(() => {
         getNews();
+        // eslint-disable-next-line
     }, []);
 
     return (

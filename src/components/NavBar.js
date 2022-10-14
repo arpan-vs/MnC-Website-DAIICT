@@ -1,6 +1,6 @@
 import React from "react";
 import daiict from "../image/daiict.png";
-import "../App.css";
+import "../css/Navbar.css";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -38,6 +38,7 @@ const NavBar = () => {
                                 <ul className="dropdown-menu dropdown-menu-end">
                                     <li><Link to="/students" className="dropdown-item text-white" href="#">Current Student</Link></li>
                                     <li><Link to="/alumni" className="dropdown-item text-white" href="#">Alumni</Link></li>
+                                    <li><Link to="/achievement" className="dropdown-item text-white" href="#">Achievement</Link></li>
                                 </ul>
                             </li>
                         </ul>

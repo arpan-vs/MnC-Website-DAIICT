@@ -59,7 +59,7 @@ const upload = multer({
 
 route.get('/', services.logout);
 
-route.get('/login', services.login);
+route.post('/login', services.login);
 
 route.get('/getnews', services.getnews);
 
