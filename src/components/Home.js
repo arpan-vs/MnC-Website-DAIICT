@@ -1,6 +1,7 @@
 import React from "react";
 import CompanyLogos from "./CompanyLogos";
 import NewsEventsHome from "./NewsEventsHome";
+import "../css/MncInfo.css";
 
 const Home = (props) => {
     return (

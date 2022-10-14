@@ -1,13 +1,12 @@
 import React, { useCallback, useRef, useContext, useEffect } from 'react';
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import './News.css';
+import '../css/News.css';
 import NewsEventContext from '../context/news_events/NewsEventContext';
 
 const NewsEventsHome = () => {
@@ -17,6 +16,7 @@ const NewsEventsHome = () => {
 
     useEffect(() => {
         getNews();
+        // eslint-disable-next-line
     }, []);
     // var newsAll = [
     //     {
@@ -91,10 +91,6 @@ const NewsEventsHome = () => {
                 <Swiper
                     slidesPerView={1}
                     spaceBetween={40}
-                    // slidesPerGroup={1}
-                    // pagination={{
-                    //     clickable: true,
-                    // }}
                     breakpoints={{
                         640: {
                             slidesPerView: 2,

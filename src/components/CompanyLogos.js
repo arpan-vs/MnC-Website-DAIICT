@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Logos.css";
+import "../css/Logos.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import "swiper/css";

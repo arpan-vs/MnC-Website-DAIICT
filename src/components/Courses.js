@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 // import { generatePath, useNavigate, useParams } from "react-router-dom";
 import CourseContext from "../context/courses/CourseContext";
-import "./Course.css";
+import "../css/Course.css";
 
 const Courses = () => {
   const context = useContext(CourseContext);

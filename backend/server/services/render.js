@@ -3,15 +3,16 @@ const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken');
 
 exports.login = async (req, res) => {
-    const { username, password } = req.body
+    const { username, password } = req.body;
     // Check if username and password is provided
+    // console.log(req.body)
     if (!username || !password) {
         return res.status(400).json({
             message: "Username or Password not present",
         })
     }
     try {
-        const ad_data = await admin_data.findOne({ username })
+        const ad_data = await admin_data.findOne({ username:username })
         if (!ad_data) {
             res.status(400).json({
                 message: "Login not successful",
