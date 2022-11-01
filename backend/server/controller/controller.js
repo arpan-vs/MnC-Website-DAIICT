@@ -1,5 +1,7 @@
 var { News, admin_data, student, faculty, course, Event, Achievement } = require('../model/model');
 const bcrypt = require("bcryptjs");
+const fs = require('fs');
+const path = "./asserts/uploads/";
 
 exports.createnews = (req, res) => {
     //validate request
@@ -24,6 +26,14 @@ exports.createnews = (req, res) => {
             res.send(data)
         })
         .catch(err => {
+            if (req.file) {
+                try {
+                    fs.unlinkSync(path + req.file.filename);
+                    //file removed
+                } catch (err) {
+                    console.error(err);
+                }
+            }
             res.status(500).send({
                 message: err.message || "Some error occured while creating a news"
             });
@@ -107,6 +117,14 @@ exports.addfaculty = (req, res) => {
             res.send(data);
         })
         .catch(err => {
+            if (req.file) {
+                try {
+                    fs.unlinkSync(path + req.file.filename);
+                    //file removed
+                } catch (err) {
+                    console.error(err);
+                }
+            }
             res.status(500).send({
                 message: err.message || "Some error occured while adding student"
             });
@@ -147,24 +165,6 @@ exports.addadmin = (req, res) => {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
-
-    //new user
-    // const user = new admin_data({
-    //     username: req.body.username,
-    //     password: req.body.password,
-    // })
-
-    // //save user in the database
-    // user
-    //     .save(user)
-    //     .then(data=>{
-    //         res.send(data);
-    //     })
-    //     .catch(err=>{
-    //         res.status(500).send({
-    //             message:err.message||"Some error occured while adding student"
-    //         });
-    //     });
 
     var password = req.body.password;
     var username = req.body.username;
@@ -209,6 +209,14 @@ exports.addAchievements = (req, res) => {
             res.send(data)
         })
         .catch(err => {
+            if (req.file) {
+                try {
+                    fs.unlinkSync(path + req.file.filename);
+                    //file removed
+                } catch (err) {
+                    console.error(err);
+                }
+            }
             res.status(500).send({
                 message: err.message || "Some error occured while add Achievement"
             });
@@ -218,12 +226,18 @@ exports.addAchievements = (req, res) => {
 
 exports.deletenews = async (req, res) => {
     const id = req.params.id;
-    try{
+    try {
         await News.findByIdAndDelete(id)
             .then(data => {
                 if (!data) {
                     res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
                 } else {
+                    try {
+                        fs.unlinkSync(path + data.image);
+                        //file removed
+                    } catch (err) {
+                        console.error(err);
+                    }
                     res.send({
                         message: "User was deleted successfully!"
                     });
@@ -268,6 +282,12 @@ exports.deletefaculty = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
+                try {
+                    fs.unlinkSync(path + data.image);
+                    //file removed
+                } catch (err) {
+                    console.error(err);
+                }
                 res.send({
                     message: "User was deleted successfully!"
                 });
@@ -328,6 +348,12 @@ exports.deleteAchievement = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
+                try {
+                    fs.unlinkSync(path + data.image);
+                    //file removed
+                } catch (err) {
+                    console.error(err);
+                }
                 res.send({
                     message: "User was deleted successfully!"
                 });
