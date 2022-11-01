@@ -18,48 +18,6 @@ const NewsEventsHome = () => {
         getNews();
         // eslint-disable-next-line
     }, []);
-    // var newsAll = [
-    //     {
-    //         id: 1,
-    //         title: "1 Mathematics & Computing Engineering is an amalgamatioalknsddddddddnklcnalscanclnanclanlncslnalkn of mathematics with computer science",
-    //         dates: new Date(2022, 11, 2),
-    //     },
-    //     {
-    //         id: 2,
-    //         title: "2 Mathematic & Computing Engineering is an amalgamation of mathematics with computer science",
-    //         dates: new Date(2022, 1, 25),
-    //     },
-    //     {
-    //         id: 3,
-    //         title: "3 Mathematics & Computing Engineering is a amalgamation of mathematics with computer science",
-    //         dates: new Date(2020, 11, 2),
-    //     },
-    //     {
-    //         id: 4,
-    //         title: "4 Mathematics & Computing Engineeng is an amalgamation of mathematics with computer science",
-    //         dates: new Date(2021, 1, 25),
-    //     },
-    //     {
-    //         id: 5,
-    //         title: "5 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-    //         dates: new Date(2032, 11, 25),
-    //     },
-    //     {
-    //         id: 6,
-    //         title: "6 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-    //         dates: new Date(2012, 11, 25),
-    //     },
-    //     {
-    //         id: 7,
-    //         title: "7 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-    //         dates: new Date(2002, 11, 25),
-    //     },
-    //     {
-    //         id: 8,
-    //         title: "8 Mathematics & Computing Engineering is an amalgamion of mathematics with computer science",
-    //         dates: new Date(2000, 11, 25),
-    //     },
-    // ];
 
     const sliderRef = useRef(null);
 
@@ -76,7 +34,7 @@ const NewsEventsHome = () => {
         <>  <div className="container">
             <div className='news-container container-sm'>
                 <div className='news-title'>
-                    <div>
+                    <div className='batchTitle'>
                         News &amp; Events
                     </div>
                     <div className='slider-icons'>
@@ -105,7 +63,7 @@ const NewsEventsHome = () => {
                     loopFillGroupWithBlank={false}
                     autoplay={{
                         delay: 4000,
-                        // disableOnInteraction: true,
+                        disableOnInteraction: true,
                     }}
                     ref={sliderRef}
                     modules={[Autoplay, Navigation]}
@@ -115,7 +73,7 @@ const NewsEventsHome = () => {
                             <SwiperSlide>
 
                                 <div className='news-card' key={news1._id}>
-                                    <a href='#' className='news-link'>
+                                    <Link to={'/news/' + news1._id} className='news-link'>
                                         <div className="news-slider-title">
                                             {news1.title}
                                             <div className="news-date">
@@ -123,7 +81,7 @@ const NewsEventsHome = () => {
                                             </div>
 
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </SwiperSlide>
                         );

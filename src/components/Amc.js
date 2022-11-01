@@ -76,7 +76,7 @@ const Amc = () => {
                 <div className="ruler"></div>
             </div>
             <div className="container mt-3">
-                <div className='container row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 m-auto'>
+                <div className='container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 m-auto'>
 
                     {amc.map((Professor) => {
                         return (

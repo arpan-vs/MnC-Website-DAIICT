@@ -8,7 +8,11 @@
     font-size: 40px;
     font-weight: bolder;
     width: auto;
-    color: rgb(10, 70, 10);
+    background: linear-gradient(148.07deg, #54cef5 45.61%, #0592c1 78.65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bolder;
     transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
     display: inline-block;
@@ -17,7 +21,6 @@
 .MnC-title:hover {
     font-size: 45px;
     font-weight: bolder;
-    color: rgb(10, 70, 10);
     transition: all 0.4s ease;
     -webkit-transition: all 0.4s ease;
 }
@@ -25,5 +28,5 @@
 .MnC-detail {
     margin: auto;
     text-align: justify;
-    font-size: larger;
+    font-size: large;
 }

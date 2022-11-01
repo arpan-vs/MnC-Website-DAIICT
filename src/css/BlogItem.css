@@ -1,38 +1,40 @@
-
 .blogItem {
-    background-color: rgb(10, 59, 15);
     border-radius: 10px;
     text-align: center;
-    transition: all .4s ease;
-    -webkit-transition: all .4s ease;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    background: #252525;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
     /* width: 424px; */
 }
 .blogItem:hover {
-    background-color: burlywood;
+    background-color: rgba(43, 43, 43, 0.79);
     transform: scale(1.02);
-    transition: all .4s ease;
-    -webkit-transition: all .4s ease;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
 }
 
 .bloglink {
     text-decoration: none;
-    transition: all .4s ease;
-    -webkit-transition: all .4s ease;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+}
+
+.blogImag{
+    width: 60%;
+    height: 100%;
 }
 
 .studentTitle {
-    margin-top: 20px;
-    font-size: 30px;
+    margin: auto;
+    margin-top: 5px;
+    font-size: 25px;
     font-weight: 700;
     text-align: center;
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(0, 255, 34, 0.741),
-        rgb(67, 119, 11)
-    );
-    color: transparent;
+    background: linear-gradient(148.07deg, #54cef5 45.61%, #0592c1 78.65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;

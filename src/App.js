@@ -4,7 +4,8 @@ import NavBar from './components/NavBar';
 import {
   BrowserRouter as Router,
   Routes,
-  Route
+  Route,
+  useParams
 } from "react-router-dom";
 import Courses from './components/Courses';
 import CourseState from './context/courses/CourseState';
@@ -20,9 +21,13 @@ import StudentState from './context/students/StudentState';
 import Achievement from './components/Achievement';
 import AmcState from './context/amc/AmcState';
 import Login from './components/Login';
+import Admin from './components/Admin';
+import NewsByID from './components/NewsByID';
 
 
 function App() {
+
+  let { id } = useParams();
   return (
     <>
       <div className='fix-width'>
@@ -37,6 +42,11 @@ function App() {
             <Route path='/news' element={
               <NewsEventState>
                 <News />
+              </NewsEventState>
+            } />
+            <Route path="/news/:id" element={
+              <NewsEventState>
+                <NewsByID />
               </NewsEventState>
             } />
 
@@ -71,6 +81,9 @@ function App() {
             } />
             <Route path="/login" element={
               <Login />
+            } />
+            <Route path="/admin" element={
+              <Admin />
             } />
           </Routes>
         </Router>

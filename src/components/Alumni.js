@@ -11,64 +11,64 @@ const Alumni = props => {
         getStudents();
     }, []);
 
-    const Students = [
-        {
-            id: 1,
-            name: "Arpan1 Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2011,
-            link: "https://google.com/"
-        },
-        {
-            id: 2,
-            name: "Arpan Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2015,
-            link: "https://google.com/"
-        },
-        {
-            id: 3,
-            name: "Arpan Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2015,
-            link: "https://google.com/"
-        },
-        {
-            id: 4,
-            name: "Arpan Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2015,
-            link: "https://google.com/"
-        },
-        {
-            id: 5,
-            name: "Arpan Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2015,
-            link: "https://google.com/"
-        },
-        {
-            id: 6,
-            name: "Arpan Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2015,
-            link: "https://google.com/"
-        },
-        {
-            id: 7,
-            name: "Arpan Shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2015,
-            link: "https://google.com/"
-        },
-        {
-            id: 8,
-            name: "Arpan shingala",
-            image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-            batch: 2017,
-            link: "https://google.com/"
-        },
-    ];
+    // const Students = [
+    //     {
+    //         id: 1,
+    //         name: "Arpan1 Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2011,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Arpan Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2015,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Arpan Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2015,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 4,
+    //         name: "Arpan Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2015,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 5,
+    //         name: "Arpan Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2015,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 6,
+    //         name: "Arpan Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2015,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 7,
+    //         name: "Arpan Shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2015,
+    //         link: "https://google.com/"
+    //     },
+    //     {
+    //         id: 8,
+    //         name: "Arpan shingala",
+    //         image: "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+    //         batch: 2017,
+    //         link: "https://google.com/"
+    //     },
+    // ];
 
     
     const batchsO = [...new Set(students.map((item) => item.batch))]
@@ -97,7 +97,7 @@ const Alumni = props => {
                                                 <div id={Student._id} className=' StudentPage m-1 px-2'>
 
                                                     <a href={Student.link} target="_blank" className='StudentPage'>
-                                                        <div className='text-capitalize'>
+                                                        <div className='text-capitalize py-1'>
                                                             {Student.name}
                                                         </div>
                                                     </a>

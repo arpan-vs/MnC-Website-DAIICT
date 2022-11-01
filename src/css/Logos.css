@@ -1,17 +1,30 @@
-.logo-title{
+.Title{
+    background: linear-gradient(148.07deg, #54cef5 45.61%, #0592c1 78.65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.logo-title {
     color: white;
     font-size: large;
     padding-left: 5px;
     margin-bottom: 5px;
 }
-.logo-container{
-    background: rgb(10, 89, 20) url(https://www.daiict.ac.in/themes/daiict/images/ln-bg.png) no-repeat;
+.logo-container {
+    background: rgb(10, 89, 20)
+        ;
     margin: 10px auto;
     border-radius: 15px;
     padding: 15px 35px;
+    background: #252525;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-.logo-card, .logo-img{
+.logo-card,
+.logo-img {
     justify-self: center;
     text-align: center;
 }
@@ -20,7 +33,7 @@
     align-self: center;
     height: 50px;
 }
-.logo-img img{
+.logo-img img {
     height: 100%;
     border-radius: 4px;
 }

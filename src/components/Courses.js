@@ -28,7 +28,7 @@ const Courses = () => {
             return (
               <>
                 <div className="sem-container container">
-                  <div className="Semtitle">Semester {semester}</div>
+                  <div className="Semtitle"><div className="semColor">Semester {semester}</div></div>
                   {/* eslint-disable-next-line */}
                   {courses.map((course) => {
                     if (course.sem === semester) {
@@ -43,13 +43,9 @@ const Courses = () => {
                                 {course.credits}
                               </div>
                             </div>
-                              <div className="mx-2"></div>
+                            <div className="mx-2"></div>
                           </button>
                           <div id={'flush-' + course._id} className="accordion-collapse collapse" aria-labelledby={'flush-h' + course._id} data-bs-parent="#accordionFlushExample">
-                            {/* <hr style={{size:2}}/> */}
-                            <div className="container">
-                              <div className="ruler"></div>
-                            </div>
                             <p className="accordion-body Discription m-auto py-2">
                               {course.description}
                             </p>
