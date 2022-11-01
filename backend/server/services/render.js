@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
             })
         } else {
             // comparing given password with hashed password
-            var result = bcrypt.compare(password, ad_data.password);
+            var result = await bcrypt.compare(password, ad_data.password);
             if (!result) {
                 res.status(400).json({ message: "Login not succesful" })
             }
