@@ -1,17 +1,12 @@
 /* Courses CSS */
 
-/* .newcontainer{
-    display: grid;
-    grid-template-columns: auto auto;
-} */
 .sem-container {
     margin: 20px auto;
-    background-color: rgba(87, 157, 134, 0.529);
     padding: 15px;
     border-radius: 10px;
+    background: #252525;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
-    /* position: sticky; */
 }
 
 .Semtitle {
@@ -19,25 +14,34 @@
     font-size: x-large;
     font-weight: bold;
     padding: 7px;
-    background-color: rgb(37, 176, 179);
+    background: #3e3e3ef4;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     margin-bottom: 7px;
 }
 
+.semColor{
+    background: linear-gradient(148.07deg, #54cef5 45.61%, #0592c1 78.65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 6px 9px rgba(0, 0, 0, 0.25);
+}
+
 .Semtitle:hover {
-    background-color: rgb(22, 107, 79);
+    background-color: rgb(67, 67, 67);
 }
 
 .courseTab {
     font-size: medium;
-    background-color: rgb(39, 106, 17);
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    background: #4a4a4a;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
+    border-radius: 10px;
     margin: auto;
 }
 
-.courseHead{
+.courseHead {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -45,17 +49,19 @@
 }
 
 .accordion-flush .accordion-item .accordion-button {
-    background-color: rgb(39, 106, 17);
+    background: #4a4a4a;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     color: whitesmoke;
 }
 
-.accordion-button{
+.accordion-button {
     padding: auto 5px;
 }
 
 .accordion-button:not(.collapsed),
 .accordion-button:not(.collapsed):focus {
     box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px;
+    background: #54cdf520 !important;
 }
 
 .accordion-button.collapsed {
@@ -74,7 +80,7 @@
 }
 
 .accordion-flush .accordion-item .accordion-button::after {
-    background-color: rgb(39, 106, 17);
+    background-color: #4a4a4a;
     color: rgba(245, 245, 245, 0);
 }
 
@@ -88,37 +94,11 @@
     word-wrap: break-word; /* Internet Explorer 5.5+ */
 }
 
-/* Single Course CSS */
-.SCourseTab {
-    width: 90%;
-    margin: 10px auto;
-    margin-top: 40px;
-    padding: 15px 25px;
-    padding-bottom: 25px;
-    background-color: #116531d9;
-    border-radius: 35px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(25px);
-    border-radius: 30px;
-}
-
-.SCourseTitle {
-    text-align: center;
-    font-size: xx-large;
-    font-weight: 900;
-}
-
-.SCourseCredits {
-    text-align: center;
-    font-size: large;
-    font-weight: 500;
-}
-
-.ruler {
+/* .ruler {
     margin: 0px;
     padding: 0px;
-    background-color: rgb(23, 75, 23);
+    background-color: white;
     align-self: center;
     border-radius: 5px;
-    /* height: 2px; */
-}
+    height: 2px;
+} */

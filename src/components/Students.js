@@ -50,7 +50,7 @@ const Students = () => {
                                                         rel="noreferrer"
                                                         className="StudentPage"
                                                     >
-                                                        <div className="text-capitalize">
+                                                        <div className="text-capitalize py-1">
                                                             {Student.name}
                                                         </div>
                                                     </a>

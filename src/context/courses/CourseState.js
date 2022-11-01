@@ -24,7 +24,7 @@ const CourseState = (props) => {
     setCourses(json);
   };
 
-  // GET all Course
+  // GET Course
   const getCourseByID = async (id) => {
     // TODO: API call
     const respose = await fetch(

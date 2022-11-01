@@ -8,7 +8,7 @@ const NavBar = () => {
         <>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark">
                 <div className="container-fluid">
-                    <a href="https://www.daiict.ac.in/" className="logo" target="_blank" >
+                    <a href="https://www.daiict.ac.in/" className="logo" rel="noreferrer" target="_blank" >
                         <img src={daiict} alt="" />
                     </a>
                     <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

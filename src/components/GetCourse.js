@@ -5,8 +5,6 @@ import "../css/Course.css";
 
 const GetCourse = () => {
 
-  // const location = useLocation();
-  // const { id } = location.state || { id: "none" };
   const { id } = useParams();
   const context = useContext(CourseContext);
   const { courses, getCourseByID } = context;

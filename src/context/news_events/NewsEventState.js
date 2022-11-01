@@ -25,6 +25,22 @@ const NewsEventState = (props) => {
     setNews(json);
   };
 
+  // GET News
+  const getNewsByID = async (id) => {
+    // TODO: API call
+    const respose = await fetch(
+      `${host}/getnews?id=${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    const json = await respose.json()
+    setNews(json);
+  };
+
   // GET all Events
   const getEvents = async () => {
     // TODO: API call
@@ -42,7 +58,7 @@ const NewsEventState = (props) => {
   };
 
   return (
-    <NewsEventContext.Provider value={{news,events,getNews,getEvents}}>
+    <NewsEventContext.Provider value={{news, events, getNews, getNewsByID, getEvents}}>
       {props.children}
     </NewsEventContext.Provider>
   )

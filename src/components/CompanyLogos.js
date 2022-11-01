@@ -74,12 +74,13 @@ const CompanyLogos = () => {
             lnk: "https://thewaltdisneycompany.com/",
         },
     ];
+
     return (
         <>
             <div className="container">
                 <div className='logo-container'>
                     <div className='logo-title'>
-                        <div>
+                        <div className='Title'>
                             Recruiters
                         </div>
                     </div>

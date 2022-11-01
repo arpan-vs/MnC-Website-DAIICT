@@ -12,21 +12,28 @@
 }
 
 .ContainerForBatch{
-    background-color: green;
-    background-color: rgb(10, 59, 15);
+    background: #252525;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
     /* text-align: center; */
 }
 .StudentPage{
     text-decoration: none;
     color: whitesmoke;
-    background-color: rgb(9, 79, 9);
+    background: #4a4a4a;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
     border-radius: 5px;
     /* margin: 1px; */
 }
 
+.StudentName{
+    margin: 10px auto;
+}
+
 .ruler{
-    background-color: rgb(20, 57, 20);
+    background: white;
     align-self: center;
-    height: 5px;
+    height: 1px;
 }

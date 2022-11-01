@@ -1,19 +1,25 @@
+.batchTitle{
+    background: linear-gradient(148.07deg, #54cef5 45.61%, #0592c1 78.65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bolder;
+    font-size: larger;
+}
 
 .news-container{
-    /* height: 200px; */
-    background: rgb(10, 89, 20) url(https://www.daiict.ac.in/themes/daiict/images/ln-bg.png) no-repeat;
     margin: 10px auto;
     border-radius: 20px;
     padding: 15px 35px;
-    /* padding-bottom: 25px; */
     min-width: 50px;
+    background: #252525;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .news-title{
-    font-size: xx-large;
+    font-size: large;
     color: white;
     padding-bottom: 10px;
-    /* margin-left: 20px; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -51,9 +57,9 @@
 
 .view-all-news:hover{
     color: white;
-    text-shadow: 0px 0px 5px rgb(245, 245, 118);
-    transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
+    text-shadow: 0px 0px 5px rgba(118, 146, 245);
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
 }
 
 .news-card{
@@ -72,10 +78,6 @@
     color: black;
 }
 
-.news-slider-title{
-    padding-bottom: 7px;
-}
-
 .newsPage{
     /* width: 80%; */
     margin: 10px auto;
@@ -83,10 +85,41 @@
 
 .newsCard{
     margin: 5px auto;
-    background-color: beige;
+    background-color: rgb(110, 110, 110);
 }
 
 .newsLink{
     text-decoration: none;
     color: black;
+}
+
+.BackIcon{
+    cursor: pointer;
+}
+
+.NewsTitle{
+    /* text-align: center; */
+    font-size: 32px;
+    font-weight: 900;
+    background: linear-gradient(135deg, #54cef5 45.61%, #0592c1 78.65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 6px 9px rgba(0, 0, 0, 0.25);
+}
+
+.NewsDate{
+    /* text-align: center; */
+    font-size: large;
+    /* font-weight: 500; */
+}
+
+.NewsDiscription {
+    text-align: justify;
+    color: white;
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
 }

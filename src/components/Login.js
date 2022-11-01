@@ -16,7 +16,12 @@ const Login = () => {
             body: JSON.stringify({username: credentials.username,password: credentials.password})
         });
         const json = await response.json();
-        nevigate(generatePath("/"));
+        if(json.success==true){
+            nevigate(generatePath("/admin"));
+        }
+        else{
+            window.alert("Invalid Details!!");
+        }
     }
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })

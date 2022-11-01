@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import NewsEventContext from '../context/news_events/NewsEventContext';
 import '../css/News.css';
 
@@ -23,17 +24,17 @@ const News = () => {
             <div className='newsPage container'>
                 {[...news].reverse().map((news1) => {
                     return (
-                        <a className='newsLink' key={news1._id} href='#'>
+                        <Link to={news1._id} className='newsLink' key={news1._id}>
                             <div className='news-card newsCard' >
                                 <div className="news-slider-title">
                                     {news1.title}
 
                                 </div>
                                 <div className="news-date">
-                                    {new Date(news1.date).toLocaleDateString()}
+                                    Date : {new Date(news1.date).toLocaleDateString()}
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     );
                 })}
             </div>

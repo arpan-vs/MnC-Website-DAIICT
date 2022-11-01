@@ -9,8 +9,8 @@ const BlogItem = props => {
       <div className='p-2 col'>
         <a className='bloglink' href={props.link} target="_blank" rel="noreferrer">
           <div className='card blogItem'>
-            <div className="card-body my-3">
-              <img src={logo} className="card-img rounded" />
+            <div className="card-body my-1">
+              <img src={logo} className="blogImag img-fluid mx-auto d-block rounded" />
               <div className="card-title studentTitle text-capitalize">{props.name}</div>
             </div>
           </div>
