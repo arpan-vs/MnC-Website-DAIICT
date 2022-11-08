@@ -3,8 +3,7 @@ const bcrypt = require("bcryptjs");
 const fs = require('fs');
 const path1 = "./asserts/uploads/";
 
-exports.createnews = async (req, res) => {
-    // console.log(req.body)
+exports.createnews = (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -28,7 +27,7 @@ exports.createnews = async (req, res) => {
 
     // console.log(user);
     //save user in the database
-    await user
+    user
         .save(user)
         .then(data => {
             res.send(data)
@@ -49,7 +48,7 @@ exports.createnews = async (req, res) => {
 
 };
 
-exports.createEvent = async (req, res) => {
+exports.createEvent = (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -63,7 +62,7 @@ exports.createEvent = async (req, res) => {
     })
 
     //save user in the database
-    await user
+    user
         .save(user)
         .then(data => {
             res.send(data);
@@ -76,7 +75,7 @@ exports.createEvent = async (req, res) => {
 
 };
 
-exports.addStudent = async (req, res) => {
+exports.addStudent = (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -92,7 +91,7 @@ exports.addStudent = async (req, res) => {
     })
 
     //save user in the database
-    await user
+    user
         .save(user)
         .then(data => {
             res.send(data);
@@ -104,7 +103,7 @@ exports.addStudent = async (req, res) => {
         });
 };
 
-exports.addfaculty = async (req, res) => {
+exports.addfaculty = (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -125,7 +124,7 @@ exports.addfaculty = async (req, res) => {
     catch{}
 
     //save user in the database
-    await user
+    user
         .save(user)
         .then(data => {
             res.send(data);
@@ -145,7 +144,7 @@ exports.addfaculty = async (req, res) => {
         });
 };
 
-exports.addcourse = async (req, res) => {
+exports.addcourse = (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -161,7 +160,7 @@ exports.addcourse = async (req, res) => {
     })
 
     //save user in the database
-    await user
+    user
         .save(user)
         .then(data => {
             res.send(data);
@@ -182,7 +181,7 @@ exports.addadmin = async (req, res) => {
 
     var password = req.body.password;
     var username = req.body.username;
-    bcrypt.hash(password, 10).then(async (hash) => {
+    await bcrypt.hash(password, 10).then(async (hash) => {
         await admin_data.create({
             username,
             password: hash,
@@ -202,7 +201,7 @@ exports.addadmin = async (req, res) => {
     });
 };
 
-exports.addAchievements = async (req, res) => {
+exports.addAchievements = (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -223,7 +222,7 @@ exports.addAchievements = async (req, res) => {
     catch{}
 
     //save user in the database
-    await user
+    user
         .save(user)
         .then(data => {
             res.send(data)
@@ -274,10 +273,10 @@ exports.deletenews = async (req, res) => {
     }
 };
 
-exports.deletestudent = async (req, res) => {
+exports.deletestudent = (req, res) => {
     const id = req.params.id;
 
-    await student.findByIdAndDelete(id)
+    student.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -294,10 +293,10 @@ exports.deletestudent = async (req, res) => {
         });
 };
 
-exports.deletefaculty = async (req, res) => {
+exports.deletefaculty = (req, res) => {
     const id = req.params.id;
 
-    await faculty.findByIdAndDelete(id)
+    faculty.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -320,10 +319,10 @@ exports.deletefaculty = async (req, res) => {
         });
 };
 
-exports.deletecourse = async (req, res) => {
+exports.deletecourse = (req, res) => {
     const id = req.params.id;
 
-    await course.findByIdAndDelete(id)
+    course.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -340,10 +339,10 @@ exports.deletecourse = async (req, res) => {
         });
 };
 
-exports.deleteadmin = async (req, res) => {
+exports.deleteadmin = (req, res) => {
     const id = req.params.id;
 
-    await admin_data.findByIdAndDelete(id)
+    admin_data.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -360,10 +359,10 @@ exports.deleteadmin = async (req, res) => {
         });
 };
 
-exports.deleteAchievement = async (req, res) => {
+exports.deleteAchievement = (req, res) => {
     const id = req.params.id;
 
-    await Achievement.findByIdAndDelete(id)
+    Achievement.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
