@@ -16,7 +16,20 @@ MNCWEB.use("/images", express.static(path.join("asserts/uploads/")));
 // MNCWEB.use('../asserts/img', express.static('img'));
 
 connectDB();
-MNCWEB.use(cors())
+MNCWEB.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true // some legacy browsers (IE11, various SmartTVs) choke on 204
+}))
+MNCWEB.use(function(req, res, next) {
+    res.header('Content-Type', 'application/json;charset=UTF-8')
+    res.header('Access-Control-Allow-Credentials', true)
+    res.header(
+      'Access-Control-Allow-Headers',
+      'Origin, X-Requested-With, Content-Type, Accept'
+    )
+    next()
+  })
+
 MNCWEB.use(morgan('tiny'));
 MNCWEB.use(cookieParser());
 MNCWEB.use(express.json());

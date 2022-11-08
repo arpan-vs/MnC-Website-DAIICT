@@ -6,56 +6,52 @@ const verify = require('../services/varifytoken');
 const multer = require('multer');
 const path = require("path");
 
-
 const validation_of_file = function (file, cb) {
-  //Allowed file extensions
-  const fileTypes = /jpeg|jpg|png|/;
-  //check extension names
-  const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
-  const mimeType = fileTypes.test(file.mimetype);
-  if (mimeType && extName) {
-    return cb(null, true);
-  } else {
-    cb("Error: You can Only Upload Images!!");
-  }
-};
-
-// storage
-// const Storage = multer.diskStorage({
-//     //destination for file
-//     destination: function (request, file, callback) {
-//         callback(null, './img/');
-//     },
-
-//     //add back to extension
-//     filename: function (request, file, callback) {
-//         callback(null, Date.now() + file.originalname);
-//     },
-// })
-
-// const upload = multer({ storage : Storage }).single('image');
-
-const Storage = multer.diskStorage({
-    //destination for file
-    destination: function (request, file, callback) {
-        callback(null, './asserts/uploads/');
-    },
-
-    // destination:"./asserts/uploads/",
-
-    //add back to extension
-    filename: function (request, file, callback) {
-        callback(null, Date.now() + file.originalname);
-    },
-});
-
-const upload = multer({ 
-    storage : Storage,
-    limits: { fileSize: 5000000 },
-    fileFilter: (req, file, cb) => {
-        validation_of_file(file, cb);
+    //Allowed file extensions
+    if(!file)
+    {
+      return cb(null,true);
+    }
+    const fileTypes = /jpeg|jpg|png|/;
+    //check extension names
+    const extName = fileTypes.test(path.extname(file.originalname).toLowerCase());
+    const mimeType = fileTypes.test(file.mimetype);
+    if (mimeType && extName) {
+      return cb(null, true);
+    } else {
+      cb("Error: You can Only Upload Images!!");
+    }
+  };
+  
+  const Storage = multer.diskStorage({
+      //destination for file
+      destination: function (request, file, callback) {
+        if(file){
+          callback(null, './asserts/uploads/');
+        }
       },
-}).single('image');
+  
+      // destination:"./asserts/uploads/",
+  
+      //add back to extension
+      filename: function (request, file, callback) {
+        if(file){  
+          callback(null, Date.now() + file.originalname);
+        }
+        else
+        {
+          callback(null, "NA");
+        }
+      },
+  });
+  
+  const upload = multer({ 
+      storage : Storage,
+      limits: { fileSize: 5000000 },
+      fileFilter: (req, file, cb) => {
+          validation_of_file(file, cb);
+        },
+  }).single('image');
 
 route.get('/', services.logout);
 

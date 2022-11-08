@@ -1,9 +1,10 @@
 var { News, admin_data, student, faculty, course, Event, Achievement } = require('../model/model');
 const bcrypt = require("bcryptjs");
 const fs = require('fs');
-const path = "./asserts/uploads/";
+const path1 = "./asserts/uploads/";
 
-exports.createnews = (req, res) => {
+exports.createnews = async (req, res) => {
+    // console.log(req.body)
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -12,15 +13,22 @@ exports.createnews = (req, res) => {
 
     //new user
 
-    const user = new News({
+    
+    let user = new News({
         title: req.body.title,
         description: req.body.description,
-        date: req.body.description,
-        image: req.file.filename
-    })
+        date: req.body.date,
+    });
+    try{
+        // await upload();
+        // im = req.file.filename;
+        user.image = req.file.filename;
+    }
+    catch{}
 
+    // console.log(user);
     //save user in the database
-    user
+    await user
         .save(user)
         .then(data => {
             res.send(data)
@@ -28,7 +36,7 @@ exports.createnews = (req, res) => {
         .catch(err => {
             if (req.file) {
                 try {
-                    fs.unlinkSync(path + req.file.filename);
+                    fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
                     console.error(err);
@@ -41,7 +49,7 @@ exports.createnews = (req, res) => {
 
 };
 
-exports.createEvent = (req, res) => {
+exports.createEvent = async (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -55,7 +63,7 @@ exports.createEvent = (req, res) => {
     })
 
     //save user in the database
-    user
+    await user
         .save(user)
         .then(data => {
             res.send(data);
@@ -68,7 +76,7 @@ exports.createEvent = (req, res) => {
 
 };
 
-exports.addStudent = (req, res) => {
+exports.addStudent = async (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -84,7 +92,7 @@ exports.addStudent = (req, res) => {
     })
 
     //save user in the database
-    user
+    await user
         .save(user)
         .then(data => {
             res.send(data);
@@ -96,22 +104,28 @@ exports.addStudent = (req, res) => {
         });
 };
 
-exports.addfaculty = (req, res) => {
+exports.addfaculty = async (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
-
+    
     //new user
-    const user = new faculty({
+    let user = new faculty({
         name: req.body.name,
         link: req.body.link,
-        image: req.file.filename
-    })
+    });
+
+    try{
+        // await upload();
+        // im = req.file.filename;
+        user.image = req.file.filename;
+    }
+    catch{}
 
     //save user in the database
-    user
+    await user
         .save(user)
         .then(data => {
             res.send(data);
@@ -119,7 +133,7 @@ exports.addfaculty = (req, res) => {
         .catch(err => {
             if (req.file) {
                 try {
-                    fs.unlinkSync(path + req.file.filename);
+                    fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
                     console.error(err);
@@ -131,7 +145,7 @@ exports.addfaculty = (req, res) => {
         });
 };
 
-exports.addcourse = (req, res) => {
+exports.addcourse = async (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -147,7 +161,7 @@ exports.addcourse = (req, res) => {
     })
 
     //save user in the database
-    user
+    await user
         .save(user)
         .then(data => {
             res.send(data);
@@ -159,7 +173,7 @@ exports.addcourse = (req, res) => {
         });
 };
 
-exports.addadmin = (req, res) => {
+exports.addadmin = async (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -188,7 +202,7 @@ exports.addadmin = (req, res) => {
     });
 };
 
-exports.addAchievements = (req, res) => {
+exports.addAchievements = async (req, res) => {
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -197,13 +211,19 @@ exports.addAchievements = (req, res) => {
 
     //new user
 
-    const user = new Achievement({
+    let user = new Achievement({
         description: req.body.description,
-        image: req.file.filename
     })
 
+    try{
+        // await upload();
+        // im = req.file.filename;
+        user.image = req.file.filename;
+    }
+    catch{}
+
     //save user in the database
-    user
+    await user
         .save(user)
         .then(data => {
             res.send(data)
@@ -211,7 +231,7 @@ exports.addAchievements = (req, res) => {
         .catch(err => {
             if (req.file) {
                 try {
-                    fs.unlinkSync(path + req.file.filename);
+                    fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
                     console.error(err);
@@ -233,7 +253,7 @@ exports.deletenews = async (req, res) => {
                     res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
                 } else {
                     try {
-                        fs.unlinkSync(path + data.image);
+                        fs.unlinkSync(path1 + data.image);
                         //file removed
                     } catch (err) {
                         console.error(err);
@@ -254,10 +274,10 @@ exports.deletenews = async (req, res) => {
     }
 };
 
-exports.deletestudent = (req, res) => {
+exports.deletestudent = async (req, res) => {
     const id = req.params.id;
 
-    student.findByIdAndDelete(id)
+    await student.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -274,16 +294,16 @@ exports.deletestudent = (req, res) => {
         });
 };
 
-exports.deletefaculty = (req, res) => {
+exports.deletefaculty = async (req, res) => {
     const id = req.params.id;
 
-    faculty.findByIdAndDelete(id)
+    await faculty.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 try {
-                    fs.unlinkSync(path + data.image);
+                    fs.unlinkSync(path1 + data.image);
                     //file removed
                 } catch (err) {
                     console.error(err);
@@ -300,10 +320,10 @@ exports.deletefaculty = (req, res) => {
         });
 };
 
-exports.deletecourse = (req, res) => {
+exports.deletecourse = async (req, res) => {
     const id = req.params.id;
 
-    course.findByIdAndDelete(id)
+    await course.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -320,10 +340,10 @@ exports.deletecourse = (req, res) => {
         });
 };
 
-exports.deleteadmin = (req, res) => {
+exports.deleteadmin = async (req, res) => {
     const id = req.params.id;
 
-    admin_data.findByIdAndDelete(id)
+    await admin_data.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
@@ -340,16 +360,16 @@ exports.deleteadmin = (req, res) => {
         });
 };
 
-exports.deleteAchievement = (req, res) => {
+exports.deleteAchievement = async (req, res) => {
     const id = req.params.id;
 
-    Achievement.findByIdAndDelete(id)
+    await Achievement.findByIdAndDelete(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 try {
-                    fs.unlinkSync(path + data.image);
+                    fs.unlinkSync(path1 + data.image);
                     //file removed
                 } catch (err) {
                     console.error(err);

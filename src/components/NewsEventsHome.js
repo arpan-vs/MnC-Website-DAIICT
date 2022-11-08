@@ -68,7 +68,8 @@ const NewsEventsHome = () => {
                     ref={sliderRef}
                     modules={[Autoplay, Navigation]}
                     className="mySwiper">
-                    {[...news].reverse().map((news1) => {
+                        
+                    {Array.from(news).reverse().map((news1) => {
                         return (
                             <SwiperSlide>
 

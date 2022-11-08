@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { generatePath, useNavigate } from 'react-router-dom';
+import useCookies from 'react-cookie/cjs/useCookies';
 
-const Login = () => {
+const Login = (props) => {
+
+    const [cookies, setCookies] = useCookies(['token']);
 
     const [credentials, setCredentials] = useState({ username: "", password: "" });
     let nevigate = useNavigate();
@@ -16,7 +19,11 @@ const Login = () => {
             body: JSON.stringify({username: credentials.username,password: credentials.password})
         });
         const json = await response.json();
-        if(json.success==true){
+        // console.log(json1);
+        if(json.success===true){
+            // localStorage.setItem('')
+            setCookies('token',json.authToken,{ path: '/', maxAge: 3600});
+            window.alert("Login Successful!!");
             nevigate(generatePath("/admin"));
         }
         else{
@@ -26,12 +33,12 @@ const Login = () => {
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
-    // console.log(credentials.username,credentials.password);
+
+
     return (
         <>
             <div className='container p-5'>
-
-                <form>
+                <form className='container'>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">
                             Email address

@@ -37,3 +37,12 @@
     align-self: center;
     height: 1px;
 }
+
+.modalColor{
+    text-decoration: none;
+    color: whitesmoke;
+    background: #4a4a4a;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+}
