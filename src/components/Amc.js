@@ -76,12 +76,12 @@ const Amc = () => {
                 <div className="ruler"></div>
             </div>
             <div className="container mt-3">
-                <div className='container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 m-auto'>
+                <div className='container row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6 m-auto'>
 
-                    {amc.map((Professor) => {
+                    {Array.from(amc).map((Professor) => {
                         return (
                             <>
-                                <BlogItem image={`http://localhost:5000/images/${Professor.image}`} name={Professor.name} link={Professor.link} />
+                                <BlogItem image={`http://localhost:5000/images/${Professor.image}`} name={Professor.name} link={Professor.link} _id={Professor._id}/>
                             </>
                         );
                     })}

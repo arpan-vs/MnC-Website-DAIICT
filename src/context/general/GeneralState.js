@@ -105,8 +105,7 @@ const GeneralState = (props) => {
             },
         });
         const json = respose.json();
-        console.log(json)
-        const newAmc = courses.filter((data) => {
+        const newAmc = amc.filter((data) => {
             return data._id !== id;
         });
         setAmc(newAmc);

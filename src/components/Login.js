@@ -41,7 +41,7 @@ const Login = (props) => {
                 <form className='container'>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">
-                            Email address
+                            User Name
                         </label>
                         <input type="text"
                             className="form-control"

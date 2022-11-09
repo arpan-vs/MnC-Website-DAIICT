@@ -22,7 +22,7 @@ const News = () => {
                 <div className="ruler"></div>
             </div>
             <div className='newsPage container'>
-                {[...news].reverse().map((news1) => {
+                {Array.from(news).reverse().map((news1) => {
                     return (
                         <Link to={news1._id} className='newsLink' key={news1._id}>
                             <div className='news-card newsCard' >

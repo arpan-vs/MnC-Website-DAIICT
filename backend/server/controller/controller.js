@@ -256,7 +256,7 @@ exports.deletenews = async (req, res) => {
                         fs.unlinkSync(path1 + data.image);
                         //file removed
                     } catch (err) {
-                        console.error(err);
+                        // console.error(err);
                     }
                     res.send({
                         message: "User was deleted successfully!"

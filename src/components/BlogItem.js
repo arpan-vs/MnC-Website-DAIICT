@@ -6,7 +6,7 @@ const BlogItem = props => {
 
   return (
     <>
-      <div className='p-2 col'>
+      <div className='p-2 col' key={props._id}>
         <a className='bloglink' href={props.link} target="_blank" rel="noreferrer">
           <div className='card blogItem'>
             <div className="card-body my-1">
