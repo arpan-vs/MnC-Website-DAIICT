@@ -15,7 +15,7 @@ exports.createnews = async (req, res) => {
     const user = new News({
         title: req.body.title,
         description: req.body.description,
-        date: req.body.description,
+        date: req.body.date,
         image: req.file.filename
     })
 
