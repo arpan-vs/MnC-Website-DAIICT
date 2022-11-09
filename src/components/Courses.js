@@ -6,18 +6,12 @@ import "../css/Course.css";
 const Courses = () => {
   const context = useContext(CourseContext);
   const { courses, getCourses } = context;
-  // const { id } = useParams();
-  // const [id, setId] = useState();
 
   const semesters = [...new Set(courses.map((item) => item.sem))];
   useEffect(() => {
     getCourses();
     // eslint-disable-next-line
   }, []);
-  // const navigate = useNavigate();
-  // const handleClick = (e) => {
-  //   id && navigate(generatePath("/course/:id", { id }));
-  // }
 
   return (
     <>
@@ -46,6 +40,7 @@ const Courses = () => {
                             <div className="mx-2"></div>
                           </button>
                           <div id={'flush-' + course._id} className="accordion-collapse collapse" aria-labelledby={'flush-h' + course._id} data-bs-parent="#accordionFlushExample">
+                          {/* <div className="my-2"></div> */}
                             <p className="accordion-body Discription m-auto py-2">
                               {course.description}
                             </p>

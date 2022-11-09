@@ -1,9 +1,10 @@
 var { News, admin_data, student, faculty, course, Event, Achievement } = require('../model/model');
 const bcrypt = require("bcryptjs");
 const fs = require('fs');
-const path = "./asserts/uploads/";
+const path1 = "./asserts/uploads/";
 
 exports.createnews = async (req, res) => {
+    // console.log(req.body)
     //validate request
     if (!req.body) {
         res.status(400).send({ message: "Content can not be empty!" });
@@ -12,13 +13,20 @@ exports.createnews = async (req, res) => {
 
     //new user
 
-    const user = new News({
+    
+    let user = new News({
         title: req.body.title,
         description: req.body.description,
         date: req.body.date,
-        image: req.file.filename
-    })
+    });
+    try{
+        // await upload();
+        // im = req.file.filename;
+        user.image = req.file.filename;
+    }
+    catch{}
 
+    // console.log(user);
     //save user in the database
     await user
         .save(user)
@@ -28,7 +36,7 @@ exports.createnews = async (req, res) => {
         .catch(err => {
             if (req.file) {
                 try {
-                    fs.unlinkSync(path + req.file.filename);
+                    fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
                     console.error(err);
@@ -102,13 +110,19 @@ exports.addfaculty = async (req, res) => {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
-
+    
     //new user
-    const user = new faculty({
+    let user = new faculty({
         name: req.body.name,
         link: req.body.link,
-        image: req.file.filename
-    })
+    });
+
+    try{
+        // await upload();
+        // im = req.file.filename;
+        user.image = req.file.filename;
+    }
+    catch{}
 
     //save user in the database
     await user
@@ -119,14 +133,14 @@ exports.addfaculty = async (req, res) => {
         .catch(err => {
             if (req.file) {
                 try {
-                    fs.unlinkSync(path + req.file.filename);
+                    fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
                     console.error(err);
                 }
             }
             res.status(500).send({
-                message: err.message || "Some error occured while adding student"
+                message: err.message || "Some error occured while adding faculty"
             });
         });
 };
@@ -154,7 +168,7 @@ exports.addcourse = async (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occured while adding student"
+                message: err.message || "Some error occured while adding course"
             });
         });
 };
@@ -168,20 +182,20 @@ exports.addadmin = async (req, res) => {
 
     var password = req.body.password;
     var username = req.body.username;
-    await bcrypt.hash(password, 10).then(async (hash) => {
+    bcrypt.hash(password, 10).then(async (hash) => {
         await admin_data.create({
             username,
             password: hash,
         })
             .then((user) =>
                 res.status(200).json({
-                    message: "User successfully created",
+                    message: "Admin successfully created",
                     user,
                 })
             )
             .catch((error) =>
                 res.status(400).json({
-                    message: "User not successful created",
+                    message: "Admin not created",
                     error: error.message,
                 })
             );
@@ -197,10 +211,16 @@ exports.addAchievements = async (req, res) => {
 
     //new user
 
-    const user = new Achievement({
+    let user = new Achievement({
         description: req.body.description,
-        image: req.file.filename
     })
+
+    try{
+        // await upload();
+        // im = req.file.filename;
+        user.image = req.file.filename;
+    }
+    catch{}
 
     //save user in the database
     await user
@@ -211,7 +231,7 @@ exports.addAchievements = async (req, res) => {
         .catch(err => {
             if (req.file) {
                 try {
-                    fs.unlinkSync(path + req.file.filename);
+                    fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
                     console.error(err);
@@ -233,24 +253,24 @@ exports.deletenews = async (req, res) => {
                     res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
                 } else {
                     try {
-                        fs.unlinkSync(path + data.image);
+                        fs.unlinkSync(path1 + data.image);
                         //file removed
                     } catch (err) {
-                        console.error(err);
+                        // console.error(err);
                     }
                     res.send({
-                        message: "User was deleted successfully!"
+                        message: "News was deleted successfully!"
                     });
                 }
             })
             .catch(err => {
                 res.status(500).send({
-                    message: `Could not delete User with id=${id}`
+                    message: `Could not delete News with id=${id}`
                 });
             });
     }
     catch (err) {
-        res.status(500).json({ message: "Erro deleting News with id " + id })
+        res.status(500).json({ message: "Error deleting News with id " + id })
     }
 };
 
@@ -263,13 +283,13 @@ exports.deletestudent = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Student was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Student with id=${id}`
             });
         });
 };
@@ -283,19 +303,19 @@ exports.deletefaculty = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 try {
-                    fs.unlinkSync(path + data.image);
+                    fs.unlinkSync(path1 + data.image);
                     //file removed
                 } catch (err) {
                     console.error(err);
                 }
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Faculty was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Faculty with id=${id}`
             });
         });
 };
@@ -309,13 +329,13 @@ exports.deletecourse = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Course was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Course with id=${id}`
             });
         });
 };
@@ -329,13 +349,13 @@ exports.deleteadmin = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Admin was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Admin with id=${id}`
             });
         });
 };
@@ -349,19 +369,19 @@ exports.deleteAchievement = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 try {
-                    fs.unlinkSync(path + data.image);
+                    fs.unlinkSync(path1 + data.image);
                     //file removed
                 } catch (err) {
                     console.error(err);
                 }
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Achievement was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Achievement with id=${id}`
             });
         });
 };

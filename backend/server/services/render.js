@@ -26,15 +26,12 @@ exports.login = async (req, res) => {
             }
             else {
                 const maxAge = 3 * 60 * 60;
-                const token = jwt.sign({ username: username }, process.env.JWTSECRET, { expiresIn: maxAge });
-                res.cookie("jwt", token, {
-                    httpOnly: true,
-                    maxAge: maxAge * 1000, // 3hrs in ms
-                });
+                const authToken = await jwt.sign({ username: username }, process.env.JWTSECRET, { expiresIn: maxAge });
                 res.status(200).json({
                     message: "Login successful",
                     user_id: ad_data._id,
                     success: true,
+                    authToken: authToken,
                 })
             }
         }
@@ -68,7 +65,7 @@ exports.getnews = async (req, res) => {
             res.json(data);
         }
         catch (err) {
-            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving News information" });
         }
     }
 };
@@ -216,7 +213,7 @@ exports.getfaculty = async (req, res) => {
     }
 };
 
-exports.getfaculty = async (req, res) => {
+exports.getAchievement = async (req, res) => {
     if (req.query.id) {
         const id = req.query.id;
 
