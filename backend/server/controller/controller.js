@@ -140,7 +140,7 @@ exports.addfaculty = async (req, res) => {
                 }
             }
             res.status(500).send({
-                message: err.message || "Some error occured while adding student"
+                message: err.message || "Some error occured while adding faculty"
             });
         });
 };
@@ -168,7 +168,7 @@ exports.addcourse = async (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occured while adding student"
+                message: err.message || "Some error occured while adding course"
             });
         });
 };
@@ -189,13 +189,13 @@ exports.addadmin = async (req, res) => {
         })
             .then((user) =>
                 res.status(200).json({
-                    message: "User successfully created",
+                    message: "Admin successfully created",
                     user,
                 })
             )
             .catch((error) =>
                 res.status(400).json({
-                    message: "User not successful created",
+                    message: "Admin not created",
                     error: error.message,
                 })
             );
@@ -259,18 +259,18 @@ exports.deletenews = async (req, res) => {
                         // console.error(err);
                     }
                     res.send({
-                        message: "User was deleted successfully!"
+                        message: "News was deleted successfully!"
                     });
                 }
             })
             .catch(err => {
                 res.status(500).send({
-                    message: `Could not delete User with id=${id}`
+                    message: `Could not delete News with id=${id}`
                 });
             });
     }
     catch (err) {
-        res.status(500).json({ message: "Erro deleting News with id " + id })
+        res.status(500).json({ message: "Error deleting News with id " + id })
     }
 };
 
@@ -283,13 +283,13 @@ exports.deletestudent = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Student was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Student with id=${id}`
             });
         });
 };
@@ -309,13 +309,13 @@ exports.deletefaculty = async (req, res) => {
                     console.error(err);
                 }
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Faculty was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Faculty with id=${id}`
             });
         });
 };
@@ -329,13 +329,13 @@ exports.deletecourse = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Course was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Course with id=${id}`
             });
         });
 };
@@ -349,13 +349,13 @@ exports.deleteadmin = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Admin was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Admin with id=${id}`
             });
         });
 };
@@ -375,13 +375,13 @@ exports.deleteAchievement = async (req, res) => {
                     console.error(err);
                 }
                 res.send({
-                    message: "User was deleted successfully!"
+                    message: "Achievement was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete User with id=${id}`
+                message: `Could not delete Achievement with id=${id}`
             });
         });
 };

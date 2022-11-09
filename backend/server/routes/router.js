@@ -67,6 +67,8 @@ route.get('/getcourse', services.getcourse);
 
 route.get('/getfaculty', services.getfaculty);
 
+route.get('/getAchievement', services.getAchievement);
+
 route.get('/logout', verify, services.logout);
 
 route.post('/api/users/news', verify, upload, controller.createnews);
@@ -93,7 +95,7 @@ route.delete('/api/users/course/:id', verify, controller.deletecourse);
 
 route.delete('/api/users/admin/:id', verify, controller.deleteadmin);
 
-route.delete('/api/users/achievement/:id', verify, controller.deleteadmin);
+route.delete('/api/users/achievement/:id', verify, controller.deleteAchievement);
 
 
 module.exports = route;

@@ -65,7 +65,7 @@ exports.getnews = async (req, res) => {
             res.json(data);
         }
         catch (err) {
-            res.status(500).json({ message: err.message || "Error Occurred while retriving user information" });
+            res.status(500).json({ message: err.message || "Error Occurred while retriving News information" });
         }
     }
 };
@@ -213,7 +213,7 @@ exports.getfaculty = async (req, res) => {
     }
 };
 
-exports.getfaculty = async (req, res) => {
+exports.getAchievement = async (req, res) => {
     if (req.query.id) {
         const id = req.query.id;
 

@@ -8,7 +8,7 @@ const cors = require("cors");
 const MNCWEB = express();
 const path = require('path');
 
-dotenv.config({path:'dot.env'});
+dotenv.config({path:'d.env'});
 const PORT = process.env.PORT||8000;
 
 // MNCWEB.use(express.static('asserts'));
