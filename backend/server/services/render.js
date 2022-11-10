@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
         })
     }
     try {
-        const ad_data = await admin_data.findOne({ username:username })
+        const ad_data = await admin_data.findOne({ username: username })
         if (!ad_data) {
             res.status(400).json({
                 message: "Login not successful",
@@ -70,35 +70,6 @@ exports.getnews = async (req, res) => {
     }
 };
 
-exports.getEvent = async (req, res) => {
-    if (req.query.id) {
-        const id = req.query.id;
-
-        try {
-            var data = await Event.findById(id);
-            if (!data) {
-                res.status(404).json({ message: "Not found Event with id " + id })
-            } else {
-                res.json(data);
-            }
-        }
-        catch (err) {
-            res.status(500).json({ message: "Erro retrieving Event with id " + id })
-        }
-
-    }
-    else {
-
-        try {
-            var data = await Event.find();
-            res.json(data);
-        }
-        catch (err) {
-            res.status(500).json({ message: err.message || "Error Occurred while retriving information" });
-        }
-    }
-};
-
 exports.getStudent = async (req, res) => {
     if (req.query.id) {
         const id = req.query.id;
@@ -115,20 +86,6 @@ exports.getStudent = async (req, res) => {
             res.status(500).json({ message: "Erro retrieving student with id " + id })
         }
 
-    }
-    else if (req.query.catagory) {
-        const catagory = req.query.catagory;
-        try {
-            var data = await student.find({ catagory: catagory });
-            if (!data) {
-                res.status(404).json({ message: "Not found student with id " + id })
-            } else {
-                res.json(data);
-            }
-        }
-        catch (err) {
-            res.status(500).json({ message: "Erro retrieving student with id " + id })
-        }
     }
     else {
 
@@ -158,20 +115,6 @@ exports.getcourse = async (req, res) => {
             res.status(500).json({ message: "Erro retrieving course with id " + id })
         }
 
-    }
-    else if (req.query.sem) {
-        const seme = req.query.sem;
-        try {
-            var data = await course.find({ sem: seme });
-            if (!data) {
-                res.status(404).send({ message: "Not found course with id " + id })
-            } else {
-                res.send(data);
-            }
-        }
-        catch (err) {
-            res.status(500).send({ message: "Erro retrieving course with id " + id })
-        }
     }
     else {
 

@@ -8,7 +8,6 @@ var schema1 = new mongoose.Schema({
 
     date: {
         type: Date,
-        default: Date.now(),
     },
 
     description: {
@@ -81,6 +80,11 @@ var schema4 = new mongoose.Schema({
 const faculty = mongoose.model('faculty', schema4);
 
 var schema5 = new mongoose.Schema({
+    course_code: {
+        type: String,
+        required: true,
+    },
+    
     title: {
         type: String,
         required: true,

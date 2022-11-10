@@ -59,8 +59,6 @@ route.post('/login', services.login);
 
 route.get('/getnews', services.getnews);
 
-route.get('/getevent', services.getEvent);
-
 route.get('/getstudent', services.getStudent);
 
 route.get('/getcourse', services.getcourse);
