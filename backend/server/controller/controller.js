@@ -127,6 +127,7 @@ exports.addcourse = async (req, res) => {
 
     //new user
     const user = new course({
+        course_code: req.body.course_code,
         title: req.body.title,
         sem: req.body.sem,
         credits: req.body.credits,
