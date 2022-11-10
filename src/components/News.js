@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import NewsEventContext from '../context/news_events/NewsEventContext';
+import GeneralContext from '../context/general/GeneralContext';
 import '../css/News.css';
 
 const News = () => {
 
-    const context = useContext(NewsEventContext);
+    const context = useContext(GeneralContext);
     const { news, getNews } = context;
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const News = () => {
                 <div className="ruler"></div>
             </div>
             <div className='newsPage container'>
-                {[...news].reverse().map((news1) => {
+                {Array.from(news).reverse().map((news1) => {
                     return (
                         <Link to={news1._id} className='newsLink' key={news1._id}>
                             <div className='news-card newsCard' >

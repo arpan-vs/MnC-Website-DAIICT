@@ -7,11 +7,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import '../css/News.css';
-import NewsEventContext from '../context/news_events/NewsEventContext';
+import GeneralContext from '../context/general/GeneralContext';
+
 
 const NewsEventsHome = () => {
 
-    const context = useContext(NewsEventContext);
+    const context = useContext(GeneralContext);
     const { news, getNews } = context;
 
     useEffect(() => {
@@ -73,17 +74,19 @@ const NewsEventsHome = () => {
                         return (
                             <SwiperSlide>
 
-                                <div className='news-card' key={news1._id}>
-                                    <Link to={'/news/' + news1._id} className='news-link'>
+                                    {news1.image && <div style={{display:"flex"}}><img className='img-fluid news-image' src={`http://localhost:5000/images/${news1.image}`}></img></div>}
+                                    {!news1.image && <div className='news-card' key={news1._id}>
+                                     <Link to={'/news/' + news1._id} className='news-link'>
                                         <div className="news-slider-title">
                                             {news1.title}
+                                            {/* {news1.image} */}
                                             <div className="news-date">
                                                 Date : {new Date(news1.date).toLocaleDateString()}
                                             </div>
 
                                         </div>
                                     </Link>
-                                </div>
+                                </div>}
                             </SwiperSlide>
                         );
                     })}

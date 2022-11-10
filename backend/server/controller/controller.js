@@ -39,7 +39,7 @@ exports.createnews = async (req, res) => {
                     fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
-                    console.error(err);
+                    // console.error(err);
                 }
             }
             res.status(500).send({
@@ -109,11 +109,11 @@ exports.addfaculty = async (req, res) => {
                     fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
-                    console.error(err);
+                    // console.error(err);
                 }
             }
             res.status(500).send({
-                message: err.message || "Some error occured while adding faculty"
+                message: err.message || "Some error occured while adding student"
             });
         });
 };
@@ -141,7 +141,7 @@ exports.addcourse = async (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: err.message || "Some error occured while adding course"
+                message: err.message || "Some error occured while adding student"
             });
         });
 };
@@ -162,13 +162,13 @@ exports.addadmin = async (req, res) => {
         })
             .then((user) =>
                 res.status(200).json({
-                    message: "Admin successfully created",
+                    message: "User successfully created",
                     user,
                 })
             )
             .catch((error) =>
                 res.status(400).json({
-                    message: "Admin not created",
+                    message: "User not successful created",
                     error: error.message,
                 })
             );
@@ -207,7 +207,7 @@ exports.addAchievements = async (req, res) => {
                     fs.unlinkSync(path1 + req.file.filename);
                     //file removed
                 } catch (err) {
-                    console.error(err);
+                    // console.error(err);
                 }
             }
             res.status(500).send({
@@ -232,18 +232,18 @@ exports.deletenews = async (req, res) => {
                         // console.error(err);
                     }
                     res.send({
-                        message: "News was deleted successfully!"
+                        message: "User was deleted successfully!"
                     });
                 }
             })
             .catch(err => {
                 res.status(500).send({
-                    message: `Could not delete News with id=${id}`
+                    message: `Could not delete User with id=${id}`
                 });
             });
     }
     catch (err) {
-        res.status(500).json({ message: "Error deleting News with id " + id })
+        res.status(500).json({ message: "Erro deleting News with id " + id })
     }
 };
 
@@ -256,13 +256,13 @@ exports.deletestudent = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "Student was deleted successfully!"
+                    message: "User was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete Student with id=${id}`
+                message: `Could not delete User with id=${id}`
             });
         });
 };
@@ -279,16 +279,16 @@ exports.deletefaculty = async (req, res) => {
                     fs.unlinkSync(path1 + data.image);
                     //file removed
                 } catch (err) {
-                    console.error(err);
+                    // console.error(err);
                 }
                 res.send({
-                    message: "Faculty was deleted successfully!"
+                    message: "User was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete Faculty with id=${id}`
+                message: `Could not delete User with id=${id}`
             });
         });
 };
@@ -302,13 +302,13 @@ exports.deletecourse = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "Course was deleted successfully!"
+                    message: "User was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete Course with id=${id}`
+                message: `Could not delete User with id=${id}`
             });
         });
 };
@@ -322,13 +322,13 @@ exports.deleteadmin = async (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with ${id}. Maybe id is wrong!` })
             } else {
                 res.send({
-                    message: "Admin was deleted successfully!"
+                    message: "User was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete Admin with id=${id}`
+                message: `Could not delete User with id=${id}`
             });
         });
 };
@@ -345,16 +345,16 @@ exports.deleteAchievement = async (req, res) => {
                     fs.unlinkSync(path1 + data.image);
                     //file removed
                 } catch (err) {
-                    console.error(err);
+                    // console.error(err);
                 }
                 res.send({
-                    message: "Achievement was deleted successfully!"
+                    message: "User was deleted successfully!"
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: `Could not delete Achievement with id=${id}`
+                message: `Could not delete User with id=${id}`
             });
         });
 };

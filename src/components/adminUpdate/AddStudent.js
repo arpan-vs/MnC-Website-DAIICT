@@ -11,8 +11,8 @@ const AddStudent = (props) => {
         e.preventDefault();
         addStudent(student.name, student.student_id, student.batch, student.link);
         setStudent({ name: "", student_id: "", batch: "", link: "" });
-        window.alert("Added Successfully!");
     }
+
     const onChange = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value })
     }
@@ -34,7 +34,7 @@ const AddStudent = (props) => {
                                     <label
                                         htmlFor="name"
                                         className="form-label"
-                                        minLength={3} required
+                                        minLength={3}
                                     >
                                         Name
                                     </label>

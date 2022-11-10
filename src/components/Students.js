@@ -1,11 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
-import StudentContext from "../context/students/StudentContext";
+import GeneralContext from "../context/general/GeneralContext";
 import "../css/Students.css";
 
 const Students = () => {
-    const context = useContext(StudentContext);
+    const context = useContext(GeneralContext);
     const { students, getStudents } = context;
 
     useEffect(() => {

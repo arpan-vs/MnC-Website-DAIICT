@@ -24,7 +24,6 @@ import { CookiesProvider } from 'react-cookie';
 
 function App() {
 
-  // const cookies = withCoo
   return (
     <>
       <CookiesProvider>
@@ -33,51 +32,21 @@ function App() {
             <Router>
               <NavBar />
               <Routes>
-                <Route path="/" element={
-                  <NewsEventState>
-                    <Home />
-                  </NewsEventState>
-                } />
-                <Route path='/news' element={
-                  <NewsEventState>
-                    <News />
-                  </NewsEventState>
-                } />
-                <Route path="/news/:id" element={
-                  <NewsEventState>
-                    <NewsByID />
-                  </NewsEventState>
-                } />
+                <Route path="/" element={<Home />} />
+                <Route path='/news' element={<News />} />
+                <Route path="/news/:id" element={<NewsByID />} />
 
-                <Route path="/course" element={
-                  <CourseState>
-                    <Courses />
-                  </CourseState>
-                } />
-                <Route path="/course/:id" element={
-                  <CourseState>
-                    <GetCourse />
-                  </CourseState>
-                } />
+                <Route path="/course" element={<Courses />} />
+
                 <Route path="/info" element={<MncInfo />} />
-                <Route path="/students" element={
-                  <StudentState>
-                    <Students />
-                  </StudentState>
-                } />
-                <Route path="/alumni" element={
-                  <StudentState>
-                    <Alumni />
-                  </StudentState>
-                } />
+
+                <Route path="/students" element={<Students />} />
+                <Route path="/alumni" element={<Alumni />} />
                 <Route path="/achievement" element={
                   <Achievement />
                 } />
-                <Route path="/amc" element={
-                  <AmcState>
-                    <Amc />
-                  </AmcState>
-                } />
+                <Route path="/amc" element={<Amc />} />
+                
                 <Route path="/login" element={
                   <Login />
                 } />

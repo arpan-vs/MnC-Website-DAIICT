@@ -31,7 +31,7 @@ const DeleteNews = (props) => {
                                             <div style={{ alignSelf: 'center' }}>
                                                 {News.title}
                                             </div>
-                                            <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteNews(News._id); window.alert("Deleted Succesfully!") }}>Delete</button>
+                                            <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteNews(News._id);}}>Delete</button>
                                         </div>
                                     )
                                 })}

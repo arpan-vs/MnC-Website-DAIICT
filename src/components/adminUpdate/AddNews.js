@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useContext } from 'react'
+import { useRef } from 'react';
 import { Cookies } from 'react-cookie';
 import GeneralContext from '../../context/general/GeneralContext'
 
@@ -7,6 +8,7 @@ import GeneralContext from '../../context/general/GeneralContext'
 
 const AddNews = (props) => {
     const cookie = new Cookies();
+    const inputRef = useRef(null);
     const content = useContext(GeneralContext);
     const { addNews } = content;
     const [news, setNews] = useState({ title: "", date: "", description: "", image:"" });
@@ -20,32 +22,16 @@ const AddNews = (props) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        // console.log(news);
         const formData = new FormData();
         formData.append('title', news.title);
         formData.append('date', news.date);
         formData.append('description', news.description);
         formData.append('image', news.image);
-        // console.log(formData);
-        // const config = {
-        //     headers: {
-        //         // 'content-type': 'multipart/form-data',
-        //         "auth-token": cookie.get('token')
-        //     }
-        // };
-        // axios.post("http://localhost:5000/api/users/news",formData,config)
-        //     .then((response) => {
-        //         console.log(response)
-        //         alert("The file is successfully uploaded");
-        //     }).catch((error) => {
-        //         console.log(error)
-        // })
-
-        // console.log(news);
         addNews(formData);
         setNews({ title: "", date: "", description: "", image:"" });
-        window.alert("Added Successfully!");
+        inputRef.current.value = null;
     }
+    
     const onChange = (e) => {
         setNews({ ...news, [e.target.name]: e.target.value })
     }
@@ -67,7 +53,7 @@ const AddNews = (props) => {
                                     <label
                                         htmlFor="title"
                                         className="form-label"
-                                        minLength={3} required
+                                        minLength={3}
                                     >
                                         Title
                                     </label>
@@ -121,6 +107,7 @@ const AddNews = (props) => {
                                         accept="image/*"
                                         // multiple
                                         onChange={handleFileChange}
+                                        ref={inputRef}
                                     />
                                 </div>
 
