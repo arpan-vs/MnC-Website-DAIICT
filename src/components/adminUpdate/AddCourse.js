@@ -4,12 +4,12 @@ import GeneralContext from '../../context/general/GeneralContext'
 const AddCourse = (props) => {
     const context = useContext(GeneralContext);
     const { addCourse } = context;
-    const [course, setCourse] = useState({ title: "", sem: "", credits: "", description: "" });
+    const [course, setCourse] = useState({ course_code:"", title: "", sem: "", credits: "", description: "" });
 
     const handleClick = (e) => {
         e.preventDefault();
-        addCourse(course.title, course.sem, course.credits, course.description);
-        setCourse({ title: "", student_id: "", batch: "", link: "" });
+        addCourse(course.course_code, course.title, course.sem, course.credits, course.description);
+        setCourse({ course_code:"", title: "", sem: "", credits: "", description: "" });
     }
     const onChange = (e) => {
         setCourse({ ...course, [e.target.name]: e.target.value })
@@ -30,10 +30,27 @@ const AddCourse = (props) => {
                             <form>
                                 <div className="mb-3">
                                     <label
+                                        htmlFor="course_code"
+                                        className="form-label"
+                                    >
+                                        Course Code*
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="course_code"
+                                        name="course_code"
+                                        aria-describedby="emailHelp"
+                                        onChange={onChange}
+                                        value={course.course_code}
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label
                                         htmlFor="title"
                                         className="form-label"
                                     >
-                                        Title
+                                        Title*
                                     </label>
                                     <input
                                         type="text"
@@ -50,7 +67,7 @@ const AddCourse = (props) => {
                                         htmlFor="sem"
                                         className="form-label"
                                     >
-                                        Semester
+                                        Semester*
                                     </label>
                                     <input
                                         type="text"
@@ -66,7 +83,7 @@ const AddCourse = (props) => {
                                         htmlFor="credits"
                                         className="form-label"
                                     >
-                                        Credits
+                                        Credits*
                                     </label>
                                     <input
                                         type="text"
@@ -76,22 +93,24 @@ const AddCourse = (props) => {
                                         onChange={onChange}
                                         value={course.credits}
                                     />
+                                    <div id="emailHelp" className="form-text"> Format : X-X-X-X
+                                    </div>
                                 </div>
                                 <div className="mb-3">
                                     <label
-                                        htmlFor="discription"
+                                        htmlFor="description"
                                         className="form-label"
                                     >
-                                        Discription
+                                        Discription*
                                     </label>
                                     <textarea
                                         className="form-control"
                                         placeholder=""
                                         style={{ height: '100px' }}
-                                        id="discription"
-                                        name="discription"
+                                        id="description"
+                                        name="description"
                                         onChange={onChange}
-                                        value={course.discription}></textarea>
+                                        value={course.description}></textarea>
                                 </div>
                             </form>
                         </div>

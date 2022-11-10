@@ -66,13 +66,14 @@ var schema4 = new mongoose.Schema({
         type: String,
         required: true,
     },
-
+    
     link: {
         type: String
     },
-
+    
     image: {
-        type: String
+        type: String,
+        required: true,
     },
 
 });
@@ -91,7 +92,7 @@ var schema5 = new mongoose.Schema({
     },
 
     sem: {
-        type: Number,
+        type: String,
         required: true,
     },
 

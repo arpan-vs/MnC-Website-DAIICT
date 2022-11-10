@@ -7,6 +7,7 @@
     background: #252525;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
+    /* max-width: 900px; */
 }
 
 .Semtitle {
@@ -95,12 +96,3 @@
 
     background: #54cdf520 !important;
 }
-
-/* .ruler {
-    margin: 0px;
-    padding: 0px;
-    background-color: white;
-    align-self: center;
-    border-radius: 5px;
-    height: 2px;
-} */

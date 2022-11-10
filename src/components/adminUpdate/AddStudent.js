@@ -36,7 +36,7 @@ const AddStudent = (props) => {
                                         className="form-label"
                                         minLength={3}
                                     >
-                                        Name
+                                        Name*
                                     </label>
                                     <input
                                         type="text"
@@ -53,7 +53,7 @@ const AddStudent = (props) => {
                                         htmlFor="student_id"
                                         className="form-label"
                                     >
-                                        Student ID
+                                        Student ID*
                                     </label>
                                     <input
                                         type="text"
@@ -63,13 +63,15 @@ const AddStudent = (props) => {
                                         onChange={onChange}
                                         value={student.student_id}
                                     />
+                                    <div id="emailHelp" className="form-text"> Format : YYYYCCIII
+                                    </div>
                                 </div>
                                 <div className="mb-3">
                                     <label
                                         htmlFor="batch"
                                         className="form-label"
                                     >
-                                        Batch
+                                        Batch*
                                     </label>
                                     <input
                                         type="text"
@@ -79,6 +81,8 @@ const AddStudent = (props) => {
                                         onChange={onChange}
                                         value={student.batch}
                                     />
+                                    <div id="emailHelp" className="form-text"> Format : 20XX
+                                    </div>
                                 </div>
                                 <div className="mb-3">
                                     <label

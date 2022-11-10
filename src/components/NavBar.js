@@ -21,7 +21,7 @@ const NavBar = () => {
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link fs-5 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Why MnC at DAIICT?
+                                    MnC at DAIICT
                                 </a>
                                 <ul className="dropdown-menu dropdown-menu-end">
                                     <li><Link to="/info" className="dropdown-item text-white" href="#">MnC Info</Link></li>

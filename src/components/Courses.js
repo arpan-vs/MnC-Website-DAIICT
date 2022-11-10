@@ -17,7 +17,7 @@ const Courses = () => {
       <div className="mx-2">
 
         <div className="accordion accordion-flush" id="accordionFlushExample">
-          {Array.from(semesters).map((semester) => {
+          {Array.from(semesters).sort().map((semester) => {
             return (
               <>
                 <div className="sem-container container">
@@ -28,9 +28,9 @@ const Courses = () => {
                       return (
                         <div className="accordion-item courseTab my-1 rounded-3" key={course._id}>
                           <button className="accordion-button collapsed rounded-3 py-2" type="button" data-bs-toggle="collapse" data-bs-target={'#flush-' + course._id} aria-expanded="false" aria-controls={'flush-' + course._id}>
-                            <div className="courseHead">
+                            <div className="courseHead mx-5">
                               <div className="text-capitalize">
-                                {course.title}
+                                {course.course_code} - {course.title}
                               </div>
                               <div>
                                 {course.credits}
@@ -40,7 +40,7 @@ const Courses = () => {
                           </button>
                           <div id={'flush-' + course._id} className="accordion-collapse collapse" aria-labelledby={'flush-h' + course._id} data-bs-parent="#accordionFlushExample">
                           {/* <div className="my-2"></div> */}
-                            <p className="accordion-body Discription m-auto py-2">
+                            <p className="accordion-body Discription m-auto py-2 px-5">
                               {course.description}
                             </p>
                           </div>
@@ -55,7 +55,6 @@ const Courses = () => {
           })}
         </div>
       </div>
-
     </>
   );
 };

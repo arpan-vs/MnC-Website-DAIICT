@@ -20,7 +20,6 @@
 }
 .StudentPage{
     text-decoration: none;
-    color: whitesmoke;
     background: #4a4a4a;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
@@ -35,7 +34,7 @@
 .ruler{
     background: white;
     align-self: center;
-    height: 1px;
+    height: 1.5px;
 }
 
 .modalColor{
@@ -45,4 +44,9 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(15px);
     border-radius: 5px;
+}
+
+.accordion-item:last-of-type .accordion-button.collasped {
+    border-top-left-radius: none;
+    border-top-right-radius: none;
 }

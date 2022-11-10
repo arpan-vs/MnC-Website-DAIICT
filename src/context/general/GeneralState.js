@@ -23,7 +23,7 @@ const GeneralState = (props) => {
         setCourses(json);
     };
     // Add Course
-    const addCourse = async (title, sem, credits, discription) => {
+    const addCourse = async (course_code, title, sem, credits, description) => {
         const respose = await fetch(
             `${host}/api/users/course`,
             {
@@ -32,7 +32,7 @@ const GeneralState = (props) => {
                     "Content-Type": "application/json",
                     "auth-token": cookie.get('token'),
                 },
-                body: JSON.stringify({ title, sem, credits, discription }),
+                body: JSON.stringify({ course_code, title, sem, credits, description }),
             }
         )
         .then((respose) => {

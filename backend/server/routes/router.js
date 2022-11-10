@@ -71,8 +71,6 @@ route.get('/logout', verify, services.logout);
 
 route.post('/api/users/news', verify, upload, controller.createnews);
 
-route.post('/api/users/event', verify, controller.createEvent);
-
 route.post('/api/users/student', verify, controller.addStudent);
 
 route.post('/api/users/faculty', verify, upload, controller.addfaculty);

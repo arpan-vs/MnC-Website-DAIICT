@@ -11,7 +11,7 @@ const Students = () => {
     useEffect(() => {
         getStudents();
         // eslint-disable-next-line
-    },[]);
+    }, []);
 
     const batchsO = [...new Set(students.map((item) => item.batch))];
     const batchs = batchsO.filter(
@@ -28,15 +28,17 @@ const Students = () => {
                 return (
                     <>
                         <div className="container">
-                            <div className="ruler"></div>
-                            <div className="batchTitle fs-3">{batch}</div>
-                            <div className="ruler"></div>
+                            <div className="container py-2 rounded-3 StudentPage">
+                                <div className="ruler"></div>
+                                <div className="batchTitle fs-3">{batch}</div>
+                                <div className="ruler"></div>
+                            </div>
                         </div>
 
                         <div className="container my-3">
                             <div className="ContainerForBatch p-2 text-white">
                                 {students.map((Student) => {
-                                // eslint-disable-next-line
+                                    // eslint-disable-next-line
                                     if (Student.batch === batch)
                                         return (
                                             <>
@@ -48,9 +50,10 @@ const Students = () => {
                                                         href={Student.link}
                                                         target="_blank"
                                                         rel="noreferrer"
-                                                        className="StudentPage"
+                                                        className="link-primary StudentPage"
                                                     >
-                                                        <div className="text-capitalize py-1">
+                                                        <div className="text-capitalize py-1"
+                                                            style={{ color: Student.link ? "#81d4fa" : "whitesmoke" }}>
                                                             {Student.name}
                                                         </div>
                                                     </a>

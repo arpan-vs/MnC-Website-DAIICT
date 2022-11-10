@@ -10,7 +10,7 @@ const AddFaculty = (props) => {
     const [faculty, setFaculty] = useState({ name: "", link: "", image: "" });
 
     const handleFileChange = (event) => {
-        setFaculty({...faculty,image: event.target.files[0]});
+        setFaculty({ ...faculty, image: event.target.files[0] });
         // console.log(news)
     }
 
@@ -21,7 +21,7 @@ const AddFaculty = (props) => {
         formData.append('link', faculty.link);
         formData.append('image', faculty.image);
         addAmc(formData);
-        setFaculty({ name: "", link: "", image: ""});
+        setFaculty({ name: "", link: "", image: "" });
         inputRef.current.value = null;
     }
     const onChange = (e) => {
@@ -46,7 +46,7 @@ const AddFaculty = (props) => {
                                         htmlFor="name"
                                         className="form-label"
                                     >
-                                        Name
+                                        Name*
                                     </label>
                                     <input
                                         type="text"
@@ -75,7 +75,8 @@ const AddFaculty = (props) => {
                                     />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="file">Upload File:</label>
+                                    <label htmlFor="file">Upload File*:</label>
+                                    <div className='m-1'></div>
                                     <input
                                         className="form-control-file mb-3"
                                         type="file" id="file"
@@ -84,6 +85,10 @@ const AddFaculty = (props) => {
                                         onChange={handleFileChange}
                                         ref={inputRef}
                                     />
+                                    <div id="emailHelp" className="form-text">
+                                        Maximum Image size is 5MB.
+                                        File Format : jpeg,jpg,png
+                                    </div>
                                 </div>
                             </form>
                         </div>

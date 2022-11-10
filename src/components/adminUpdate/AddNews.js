@@ -11,12 +11,12 @@ const AddNews = (props) => {
     const inputRef = useRef(null);
     const content = useContext(GeneralContext);
     const { addNews } = content;
-    const [news, setNews] = useState({ title: "", date: "", description: "", image:"" });
+    const [news, setNews] = useState({ title: "", date: "", description: "", image: "" });
     // const [file, setFile] = useState(null);
 
 
     const handleFileChange = (event) => {
-        setNews({...news,image: event.target.files[0]});
+        setNews({ ...news, image: event.target.files[0] });
         // console.log(news)
     }
 
@@ -28,10 +28,10 @@ const AddNews = (props) => {
         formData.append('description', news.description);
         formData.append('image', news.image);
         addNews(formData);
-        setNews({ title: "", date: "", description: "", image:"" });
+        setNews({ title: "", date: "", description: "", image: "" });
         inputRef.current.value = null;
     }
-    
+
     const onChange = (e) => {
         setNews({ ...news, [e.target.name]: e.target.value })
     }
@@ -55,7 +55,7 @@ const AddNews = (props) => {
                                         className="form-label"
                                         minLength={3}
                                     >
-                                        Title
+                                        Title*
                                     </label>
                                     <input
                                         type="text"
@@ -88,7 +88,7 @@ const AddNews = (props) => {
                                         htmlFor="description"
                                         className="form-label"
                                     >
-                                        Discription
+                                        Discription*
                                     </label>
                                     <textarea
                                         className="form-control"
@@ -109,6 +109,10 @@ const AddNews = (props) => {
                                         onChange={handleFileChange}
                                         ref={inputRef}
                                     />
+                                <div id="emailHelp" className="form-text">
+                                    Maximum Image size is 5MB.
+                                    File Format : jpeg,jpg,png
+                                </div>
                                 </div>
 
                             </form>

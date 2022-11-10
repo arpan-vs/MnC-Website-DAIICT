@@ -63,20 +63,22 @@ const NewsEventsHome = () => {
                     loop={true}
                     loopFillGroupWithBlank={false}
                     autoplay={{
-                        delay: 4000,
+                        delay: 3000,
                         disableOnInteraction: true,
                     }}
                     ref={sliderRef}
                     modules={[Autoplay, Navigation]}
                     className="mySwiper">
-                        
+
                     {Array.from(news).reverse().map((news1) => {
                         return (
                             <SwiperSlide>
 
-                                    {news1.image && <div style={{display:"flex"}}><img className='img-fluid news-image' src={`http://localhost:5000/images/${news1.image}`}></img></div>}
+                                <Link to={'/news/' + news1._id} className='news-link'>
+                                    {news1.image && <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                        <img className='img-fluid news-image' src={`http://localhost:5000/images/${news1.image}`}></img>
+                                    </div>}
                                     {!news1.image && <div className='news-card' key={news1._id}>
-                                     <Link to={'/news/' + news1._id} className='news-link'>
                                         <div className="news-slider-title">
                                             {news1.title}
                                             {/* {news1.image} */}
@@ -85,8 +87,8 @@ const NewsEventsHome = () => {
                                             </div>
 
                                         </div>
-                                    </Link>
-                                </div>}
+                                    </div>}
+                                </Link>
                             </SwiperSlide>
                         );
                     })}

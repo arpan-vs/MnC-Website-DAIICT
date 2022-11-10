@@ -18,8 +18,9 @@
 
 .news-image{
     border-radius: 15px;
-    width: 100%;
-    max-height: 200px;
+    height: 200px;
+    /* width: 100%; */
+    /* max-height: 200px; */
 }
 .news-title{
     font-size: large;
@@ -74,6 +75,7 @@
     font-size: large;
     overflow-wrap: break-word;
     padding: auto;
+    /* height: ; */
 }
 
 .news-card:hover{

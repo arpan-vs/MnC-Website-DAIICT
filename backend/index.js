@@ -9,7 +9,7 @@ const MNCWEB = express();
 const path = require('path');
 
 dotenv.config({path:'dot.env'});
-const PORT = process.env.PORT||8000;
+const PORT = process.env.PORT || 8000;
 
 // MNCWEB.use(express.static('asserts'));
 MNCWEB.use("/images", express.static(path.join("asserts/uploads/")));  
