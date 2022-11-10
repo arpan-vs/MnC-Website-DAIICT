@@ -10,7 +10,6 @@ const AddCourse = (props) => {
         e.preventDefault();
         addCourse(course.title, course.sem, course.credits, course.description);
         setCourse({ title: "", student_id: "", batch: "", link: "" });
-        window.alert("Added Successfully!");
     }
     const onChange = (e) => {
         setCourse({ ...course, [e.target.name]: e.target.value })
@@ -33,7 +32,6 @@ const AddCourse = (props) => {
                                     <label
                                         htmlFor="title"
                                         className="form-label"
-                                        minLength={3} required
                                     >
                                         Title
                                     </label>
@@ -99,7 +97,7 @@ const AddCourse = (props) => {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" className="btn btn-primary" onClick={handleClick}>
+                            <button type="submit" className="btn btn-primary"  onClick={handleClick}>
                                 Add Course
                             </button>
                         </div>

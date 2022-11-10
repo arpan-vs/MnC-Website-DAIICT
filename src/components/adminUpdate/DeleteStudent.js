@@ -40,7 +40,7 @@ const DeleteStudent = (props) => {
                                                                     <div style={{ alignSelf: 'center' }}>
                                                                         {student.name}
                                                                     </div>
-                                                                    <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteStudent(student._id); window.alert("Deleted Succesfully!") }}>Delete</button>
+                                                                    <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteStudent(student._id);}}>Delete</button>
                                                                 </div>
                                                             </>
                                                         )

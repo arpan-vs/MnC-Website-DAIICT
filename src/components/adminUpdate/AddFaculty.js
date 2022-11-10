@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useRef } from 'react';
 import { useContext } from 'react'
 import GeneralContext from '../../context/general/GeneralContext'
 
 const AddFaculty = (props) => {
     const context = useContext(GeneralContext);
     const { addAmc } = context;
+    const inputRef = useRef(null);
     const [faculty, setFaculty] = useState({ name: "", link: "", image: "" });
 
     const handleFileChange = (event) => {
@@ -20,7 +22,7 @@ const AddFaculty = (props) => {
         formData.append('image', faculty.image);
         addAmc(formData);
         setFaculty({ name: "", link: "", image: ""});
-        window.alert("Added Successfully!");
+        inputRef.current.value = null;
     }
     const onChange = (e) => {
         setFaculty({ ...faculty, [e.target.name]: e.target.value })
@@ -43,7 +45,6 @@ const AddFaculty = (props) => {
                                     <label
                                         htmlFor="name"
                                         className="form-label"
-                                        minLength={3} required
                                     >
                                         Name
                                     </label>
@@ -81,6 +82,7 @@ const AddFaculty = (props) => {
                                         accept="image/*"
                                         // multiple
                                         onChange={handleFileChange}
+                                        ref={inputRef}
                                     />
                                 </div>
                             </form>

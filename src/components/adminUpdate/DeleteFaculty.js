@@ -30,10 +30,9 @@ const DeleteFaculty = (props) => {
 
                                         <div className='border m-1 py-1 px-2 rounded d-flex justify-content-between' key={faculty._id}>
                                             <div style={{ alignSelf: 'center' }}>
-                                            {faculty._id}
                                                 {faculty.name}
                                             </div>
-                                            <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteAmc(faculty._id); window.alert("Deleted Succesfully!") }}>Delete</button>
+                                            <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteAmc(faculty._id);}}>Delete</button>
                                         </div>
                                     )
                                 })}

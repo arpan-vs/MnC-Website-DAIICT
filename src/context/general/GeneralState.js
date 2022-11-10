@@ -34,10 +34,24 @@ const GeneralState = (props) => {
                 },
                 body: JSON.stringify({ title, sem, credits, discription }),
             }
-        );
-        const json = await respose.json();
+        )
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status,respose.statusText);
+            }
+            else{
+                const data = respose.json();
+                setCourses(courses.concat(data));
+                window.alert("Course added Successfully!!!");
+            }
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
 
-        setCourses(courses.concat(json));
+        // const json = await respose.json();
+
+        // setCourses(courses.concat(json));
     }
 
     // Delete a Course
@@ -49,14 +63,25 @@ const GeneralState = (props) => {
                     "Content-Type": "application/json",
                     "auth-token": cookie.get('token'),
             },
-        });
-        const json = respose.json();
-        console.log(json)
-        // console.log("Deleteing the note " + id);
-        const newCourses = courses.filter((data) => {
-            return data._id !== id;
-        });
-        setCourses(newCourses);
+        })
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status, respose.statusText)
+            }
+            else{
+                respose.json();
+            }        
+        })
+        .then(() => {
+            const newCourses = courses.filter((data) => {
+                return data._id !== id;
+            });
+            setCourses(newCourses);
+            window.alert("Course deleted Successfully!!!");
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
     }
 
     const AmcInitial = [];
@@ -88,10 +113,23 @@ const GeneralState = (props) => {
                 },
                 body: formData,
             }
-        );
-        const json = await respose.json();
+        )
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status,respose.statusText);
+            }
+            else{
+                const data = respose.json();
+                setAmc(amc.concat(data));
+                window.alert("Faculty added Successfully!!!");
+            }
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
+        // const json = await respose.json();
 
-        setAmc(amc.concat(json));
+        // setAmc(amc.concat(json));
     }
 
     // Delete a Course
@@ -103,12 +141,25 @@ const GeneralState = (props) => {
                     "Content-Type": "application/json",
                     "auth-token": cookie.get('token'),
             },
-        });
-        const json = respose.json();
-        const newAmc = amc.filter((data) => {
-            return data._id !== id;
-        });
-        setAmc(newAmc);
+        })
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status, respose.statusText)
+            }
+            else{
+                respose.json();
+            }
+        })
+        .then(() => {
+            const newAmc = amc.filter((data) => {
+                return data._id !== id;
+            });
+            setAmc(newAmc);
+            window.alert("Faculty deleted Successfully!!!");
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
     }
 
     const StudentInitial = [];
@@ -143,11 +194,21 @@ const GeneralState = (props) => {
                 withCredentials: true,
                 body: JSON.stringify({ name, student_id, batch, link }),
             }
-            );
-            const json = await respose.json();
-            console.log("hello");
+            )
+            .then((respose) => {
+                if(respose.status !== 200){
+                    throw (respose.status,respose.statusText);
+                }
+                else{
+                    const data = respose.json();
+                    setStudents(students.concat(data));
+                    window.alert("Student added Successfully!!!");
+                }
+            })
+            .catch((err) => {
+                window.alert(err);
+            })
 
-        setStudents(students.concat(json));
     }
 
     // Delete a Student
@@ -159,14 +220,28 @@ const GeneralState = (props) => {
                 "Content-Type": "application/json",
                 "auth-token": cookie.get('token'),
             },
-        });
-        const json = respose.json();
-        console.log(json)
+        })
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status, respose.statusText)
+            }
+            else{
+                respose.json();
+            }        })
+        .then(() => {
+            const newStudents = students.filter((data) => {
+                return data._id !== id;
+            });
+            setStudents(newStudents);
+            window.alert("Student deleted Successfully!!!");
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
+
+        // const json = respose.json();
+        // console.log(json)
         // console.log("Deleteing the note " + id);
-        const newStudents = students.filter((data) => {
-            return data._id !== id;
-        });
-        setStudents(newStudents);
     }
 
     const NewsInitial = [];
@@ -191,7 +266,7 @@ const GeneralState = (props) => {
     const getNewsByID = async (id) => {
         // TODO: API call
         const respose = await fetch(
-            `${host}/getnews/${id}`,
+            `${host}/getnews?id=${id}`,
             {
                 method: "GET",
                 headers: {
@@ -199,7 +274,7 @@ const GeneralState = (props) => {
                 },
             }
         );
-        const json = await respose.json()
+        const json = await respose.json();
         setNews(json);
     };
     // Add News
@@ -214,10 +289,24 @@ const GeneralState = (props) => {
                 },
                 body: formData,
             }
-        );
-        const json = await respose.json();
+        )
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status,respose.statusText);
+            }
+            else{
+                const data = respose.json();
+                setNews(news.concat(data));
+                window.alert("Course added Successfully!!!");
+            }
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
 
-        setNews(news.concat(json));
+        // const json = await respose.json();
+
+        // setNews(news.concat(json));
     }
     // Delete a Course
     const deleteNews = async (id) => {
@@ -228,14 +317,28 @@ const GeneralState = (props) => {
                     "Content-Type": "application/json",
                     "auth-token": cookie.get('token'),
             },
-        });
-        const json = respose.json();
-        console.log(json)
+        })
+        .then((respose) => {
+            if(respose.status !== 200){
+                throw (respose.status, respose.statusText)
+            }
+            else{
+                respose.json();
+            }        })
+        .then(() => {
+            const newNews = news.filter((data) => {
+                return data._id !== id;
+            });
+            setNews(newNews);
+            window.alert("News deleted Successfully!!!");
+        })
+        .catch((err) => {
+            window.alert(err);
+        })
+
+        // const json = respose.json();
+        // console.log(json)
         // console.log("Deleteing the note " + id);
-        const newNews = news.filter((data) => {
-            return data._id !== id;
-        });
-        setNews(newNews);
     }
     return (
         <GeneralContext.Provider value={{ courses, getCourses, addCourse, deleteCourse, amc, getAmc, addAmc, deleteAmc, students, getStudents, addStudent, deleteStudent, news, getNews, getNewsByID, addNews, deleteNews }}>

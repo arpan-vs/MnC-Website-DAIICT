@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { BsArrowLeft } from "react-icons/bs";
-import NewsEventContext from '../context/news_events/NewsEventContext';
 import '../css/News.css';
+import GeneralContext from '../context/general/GeneralContext';
 
 const NewsByID = () => {
 
     const { id } = useParams();
-    const context = useContext(NewsEventContext);
+    const context = useContext(GeneralContext);
     const { news, getNewsByID } = context;
     useEffect(() => {
         getNewsByID(id);

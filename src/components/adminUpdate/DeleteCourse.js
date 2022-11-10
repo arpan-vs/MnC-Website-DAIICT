@@ -31,7 +31,7 @@ const DeleteCourse = (props) => {
                                                 <div className='bg-dark border border-3 m-1 rounded p-2 fs-4'>
                                                     Semester {semester}
                                                 </div>
-                                                {courses.map((course) => {
+                                                {Array.from(courses).map((course) => {
                                                     if (course.sem === semester) {
                                                         return (
                                                             <>
@@ -39,7 +39,7 @@ const DeleteCourse = (props) => {
                                                                     <div style={{alignSelf:'center'}}>
                                                                         {course.title}
                                                                     </div>
-                                                                    <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteCourse(course._id); window.alert("Deleted Succesfully!") }}>Delete</button>
+                                                                    <button type="button" className="btn btn-outline-info btn-sm" onClick={() => { deleteCourse(course._id);}}>Delete</button>
                                                                 </div>
                                                             </>
                                                         )

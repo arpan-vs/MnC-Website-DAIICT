@@ -1,13 +1,13 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
-import AmcContext from '../context/amc/AmcContext';
 import BlogItem from './BlogItem';
 import "../css/Students.css";
+import GeneralContext from '../context/general/GeneralContext';
 
 const Amc = () => {
 
-    const context = useContext(AmcContext);
+    const context = useContext(GeneralContext);
     const { amc, getAmc } = context;
 
     useEffect(() => {

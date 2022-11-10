@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import NewsEventContext from '../context/news_events/NewsEventContext';
+import GeneralContext from '../context/general/GeneralContext';
 import '../css/News.css';
 
 const News = () => {
 
-    const context = useContext(NewsEventContext);
+    const context = useContext(GeneralContext);
     const { news, getNews } = context;
 
     useEffect(() => {
